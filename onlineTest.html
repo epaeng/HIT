@@ -1,0 +1,1218 @@
+ <!DOCTYPE html>
+ <p><!-- Bootstrap v3.0.3 --></p>
+<link href="https://s3.amazonaws.com/mturk-public/bs30/css/bootstrap.min.css" rel="stylesheet" /> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<!--<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
+
+
+<style>
+.page {
+    display: none;
+}
+
+#page1 {
+    display: block;
+}
+
+input[type="radio"] {
+    margin: 0px 3px 0px 15px;
+    vertical-align: middle;
+
+}
+
+.border1 {
+    border:2px solid red;
+}
+
+.borderRed {
+    border:3px solid #898989;
+}
+
+.borderGreen {
+    border:3px solid #4DDB4D;
+}
+
+</style>
+
+<section class="container" id="Other" style="margin-bottom:15px; padding: 10px 10px; font-family: Verdana, Geneva, sans-serif; color:#333333; font-size:0.9em;">
+    
+<div class="page" id="page1">
+<fieldset>
+    <h5><b>Agreement to Participate in <i>Trust in game theoretic scenarios</i></b></h5><p></p>
+
+<b>Study Leadership.</b> We are researchers at Harvey Mudd College in the Computer Science department.<p></p>
+
+<b>Purpose.</b> The purpose of this study is to explore how people make decisions in situations that require trust.<p></p>
+
+<b>Eligibility.</b> To take part in this study, you must be a US citizen and over the age of 18.<p></p>
+
+<b>Participation.</b> During the study, you will be playing a game as follows: you are provided 10 coins, and must entrust some of them to another player in each round. Furthermore, you must decide whether to keep or return the coins that were entrusted to you by the other player. Game mechanics will be further explained later.<p></p>
+
+<b>Risks of Participation.</b> The risks you run by taking part in this study are minimal. They include those commonly encountered when sitting in front of a computer, ie boredom and fatigue.</p><p>
+
+<b>Benefits of Participation.</b> There is no personal benefit for your participation. However, the researchers and society as a whole will benefit by improved knowledge on how humans make decisions that require trust.<p></p>
+
+<b>Compensation.</b> For completing this study, you will be compensated a flat fee of $0.25. As long as you complete the HIT, your HIT will be approved and you will be payed $0.25. Furthermore, bonus of <i>up to $0.75</i> is provided, depending on how well you do in the game. In essence, the better you do, the more we can compensate you. A bonus payout structure is shown on the next page. <p></p>
+
+<b>Voluntary Participation.</b> Your participation in this study is completely voluntary. You may stop or withdraw from the study at any time, but partially completed HITs will not be analyzed or compensated. Your decision participate or withdraw will have no effect on your current or future connection with anyone at Harvey Mudd College.<p></p>
+
+<b>Confidentiality.</b> No identifying information, besides your MTurk ID for payment purposes, is being collected. Beyond your responses in the game, no IP addresses, email addresses, or other identifying information will be collected. Survey data will be stored on a password protected computer. All individual answers will be presented in summary form in publications resulting from this study with the exception of rationale answers, which may be quoted without identifying information attached. We may share the data set with other researchers, but your identity will not be known.<p></p>
+
+<b>Further Information.</b> You may print and keep a copy of this consent form.<p></p>
+
+<b>Consent.</b> By <i>checking the box</i>, you are signifying that you understand the information on this form and that you are eligible and voluntarily agreeing to participate.<p></p>
+
+    <p><input type="radio" name="consentAgree" value="Agree" /> I have read and understood the above, and consent to participate in this experiment</p>    
+    <a class="nextLink" href="javascript:NextTrial()">Click to continue</a></fieldset>
+</div>    
+
+<div class="page" id="page2"> 
+<div class="row col-xs-12 col-md-12"><!-- Instructions -->
+<div class="panel panel-primary">
+<div class="panel-heading"><strong>Instructions</strong></div>
+
+<div class="panel-body">
+<p>Hello!</p>
+
+This is a short experiment that explores how people interact in decisions that require trust. <p></p>
+    You will be matched with another Turker, and given 10 coins to start each round. In each round, you must: <p></p>
+    <OL>   
+    <LI> Entrust a number of coins to your opponent.
+    <LI> Decide whether to keep or return <i>all</i> the coins that your opponent entrusted to you. 
+    </OL>
+
+    The value of returned coins is <b>doubled</b>, while the value of kept coins stays the same. Therefore, how much you gain by the end of a round depends on both the number of coins both parties entrusted and whether they were kept or returned. <p></p>
+
+    For example, say at the beginning of a round <span style="color:CornflowerBlue">you</span> entrusted <span style="color:CornflowerBlue">5</span> coins and your <span style="color:Green">opponent</span> entrusted  <span style="color:Green">7</span>. Then: <p></p>
+    <UL>
+    <LI> If you both decide to <i>return</i> each other's coins, then <span style="color:CornflowerBlue">you</span> end the round with a <span style="color:CornflowerBlue">net gain of 5</span> for a <span style="color:CornflowerBlue">total of 15</span> and your <span style="color:Green">opponent</span> a <span style="color:Green">net gain of 7</span> for a <span style="color:Green">total of 17</span>.<p></p>
+
+    <LI> If you both decide to <i>keep</i> each other's coins, then <span style="color:CornflowerBlue">you</span> end the round with a <span style="color:CornflowerBlue">net gain of 2</span> for a <span style="color:CornflowerBlue">total of 12</span> and your <span style="color:Green">opponent</span> a <span style="color:Green">net loss of 2</span> for a <span style="color:Green">total of 8</span>.<p></p>
+
+    <LI> If <span style="color:CornflowerBlue">you</span> decide to <span style="color:CornflowerBlue"><i>keep</i></span> your opponent's coins but your <span style="color:Green">opponent</span> decides to <span style="color:Green"><i>return</i></span> your coins, then you end the round with a <span style="color:CornflowerBlue">net gain of 5+7=12</span> for a <span style="color:CornflowerBlue">total of 22</span> and your opponent a <span style="color:Green">net loss of 7</span> (from their lost investment) for a <span style="color:Green">total of 3</span>.<p></p>
+
+    <LI> If <span style="color:CornflowerBlue">you</span> decide to <span style="color:CornflowerBlue"><i>return</i></span> your opponent's coins but your <span style="color:Green">opponent</span> decides to <span style="color:Green"><i>keep</i></span> your coins, then you end the round with a <span style="color:CornflowerBlue">net loss of 5</span> (from your lost investment) for a <span style="color:CornflowerBlue">total of 5</span> and your opponent a <span style="color:Green">net gain of 5+7=12</span> for a <span style="color:Green">total of 22</span>.<p></p>
+    </UL>
+
+Simply, returning your opponent's coins increases your opponent's total coin count, while keeping those coins increases your total coin count. The same goes for your opponent.<p></p>
+
+There will be multiple rounds, but neither of you know the total number of rounds. <i><b>At the beginning of each round, you start afresh with 10 total coins (hence 10 coins available to entrust).</b></i> The number of coins each player entrusts in each round will be revealed to both players at the same time, as well as the decision to return or keep the other player's coins. <p></p>
+
+<i>You will be compensated a <b>bonus</b> based on the <b>average</b> number of coins per round you were able to accrue (rounded to the nearest whole number). For every coin above 10, you get an bonus of $0.025. This works out to a bonus of $0.25 for an average of 20 coins per round and a bonus of $0.50 for an average of 30 coins per round. Good luck!</i>
+<p></p>
+
+<!-- MODAL- add javascript -->
+    <button type="button" class="btn btn-primary" id="Matcher" title = "Click to match" value="Click to match with an opponent" onclick="onClickMatcher()">Click to match with an opponent</button>
+
+</div>
+</div>
+<!-- End Instructions --><!-- Content Body -->
+
+<section>
+    <fieldset id="previousRoundResults"><b><legend id="resultIdentification"> </legend></b>
+    <!-- <p id="resultIdentification" > </p> -->
+    <p>Opponent's previous move: <span style="color:Green"><b id="lastMove">  </b></span>   Your previous move: <span style="color:CornflowerBlue"><b id="mylastmove"></b></span> </p>
+    <p>Your total coin count for this round: <span style="color:CornflowerBlue"><b id="humYears"></b></span> coins (<b id="humincrease"> </b>) Average coin count: <span style="color:CornflowerBlue"><b id="humAverage"></b></span> coins</p>
+    <p>Opponent's total coin count for this round: <span style="color:Green"><b id="compYears"></b></span> coins (<b id="compincrease"> </b>) Average coin count: <span style="color:Green"><b id="compAverage"></b></span> coins</p></fieldset>
+
+    <fieldset><label for="sel1">1. Number of coins to entrust (select one):</label>
+      <select class="form-control" id="entrust">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+      </select>
+
+      <button type="button" class="btn btn-primary" id="sendEntrustment" value="Send coin entrustment" onclick="delayEntrustment()" disabled= "true"> Send entrustment to other player</button>
+      </fieldset>
+<fieldset><p>How many coins your opponent entrusted to you: <b id="comp_entrusted"></b> </fieldset> 
+<fieldset><label>2. Select your move: </label>
+<button type="button" class="btn btn-danger" id="War" title = "Click for War" onclick="delayWar(this)" value="Keep coins" disabled="true" >Keep opponent's coins</button>
+<button type="button" class="btn btn-success" id="Peace" title = "Click for peace" onclick="delayPeace(this)" value="Return coins" disabled="true" >Return opponent's coins</button>   
+</fieldset>
+    <!-- DO NOT NEED THE FOLLOWING
+    <fieldset disabled><label>Do not write in this box</label><textarea class="form-control" cols="5" name="Q6MultiLineTextInput" id="answer"></textarea></fieldset> -->
+
+</section>
+    <p></p>
+</div>
+</div>
+    
+<div class="page" id="page3">
+
+<p><b> We are now going to ask you some questions about your decision making process and how it was influenced by your interactions with the other player. </b></p><p></p>
+
+<form name="human" method="post">
+
+    <fieldset id="motivation"><label>1. What motivated you in this game?</label> <p></p>
+        <input type="radio" name="motivation" value="mot1" id="mot1" required/> Beating the other player. <p></p>
+        <input type="radio" name="motivation" value="mot2" id="mot2"/> Maximizing my earnings. <p></p>
+        <input type="radio" name="motivation" value="mot3" id="mot3"/> Helping the other player. <p></p>
+        <input type="radio" name="motivation" value="mot4" id="mot4"/> Finishing as quickly as possible. <p></p>
+        <input type="radio" name="motivation" value="mot5" id="mot5"/> Other (please write in textbox) <p></p>
+    <textarea class="form-control" cols="120" name="Q6MultiLineTextInput" placeholder = "Write here..." rows="2" id="mot6H"></textarea></fieldset>
+
+    <fieldset id="qualities">
+    <label>2. When you think about human beings, which of these qualities come to mind?</label> <p></p>
+        <input type="checkbox" name="qualitiesH" value="qualities1" id="qualities1"/> Intelligence <p></p>
+        <input type="checkbox" name="qualitiesH" value="qualities2" id="qualities2"/> Faculty for sensations <p></p>
+        <input type="checkbox" name="qualitiesH" value="qualities3" id="qualities3"/> Rationality <p></p>
+        <input type="checkbox" name="qualitiesH" value="qualities4" id="qualities4"/> Sympathy <p></p>
+        <input type="checkbox" name="qualitiesH" value="qualities5" id="qualities5"/> Perfection <p></p>
+        <input type="checkbox" name="qualitiesH" value="qualities6" id="qualities6"/> Humanity <p></p>
+        <input type="checkbox" name="qualitiesH" value="qualities7" id="qualities7"/> Faculty for feelings <p></p>
+        <input type="checkbox" name="qualitiesH" value="qualities8" id="qualities8"/> Precision <p></p>
+        <input type="checkbox" name="qualitiesH" value="qualities9" id="qualities9"/> Life <p></p>
+        <input type="checkbox" name="qualitiesH" value="qualities10" id="qualities10"/> Reliability </fieldset>
+
+<p></p>
+
+<p><b> The following are asked on a Likert scale from 1 to 7 (1 = not at all, 7 = extremely). Please indicate how you feel about these phrases: </b></p><p></p>
+
+    <fieldset id="deceptive"><label>3. Humans are deceptive. </label>
+        <input type="radio" name="deceptive" value="deceptive1" id="deceptive1"/> 1
+        <input type="radio" name="deceptive" value="deceptive2" id="deceptive2"/> 2
+        <input type="radio" name="deceptive" value="deceptive3" id="deceptive3"/> 3
+        <input type="radio" name="deceptive" value="deceptive4" id="deceptive4"/> 4
+        <input type="radio" name="deceptive" value="deceptive5" id="deceptive5"/> 5
+        <input type="radio" name="deceptive" value="deceptive6" id="deceptive6"/> 6
+        <input type="radio" name="deceptive" value="deceptive7" id="deceptive7"/> 7</fieldset>
+
+    <fieldset id="underhanded"><label>4. Humans behave in an underhanded manner. </label>
+        <input type="radio" name="underhanded" value="underhanded1" id="underhanded1"/> 1 
+        <input type="radio" name="underhanded" value="underhanded2" id="underhanded2"/> 2
+        <input type="radio" name="underhanded" value="underhanded3" id="underhanded3"/> 3
+        <input type="radio" name="underhanded" value="underhanded4" id="underhanded4"/> 4
+        <input type="radio" name="underhanded" value="underhanded5" id="underhanded5"/> 5
+        <input type="radio" name="underhanded" value="underhanded6" id="underhanded6"/> 6
+        <input type="radio" name="underhanded" value="underhanded7" id="underhanded7"/> 7</fieldset>
+
+    <fieldset id="confident"><label>5. I am confident in humans. </label>
+        <input type="radio" name="confident" value="confident1" id="confident1"/> 1 
+        <input type="radio" name="confident" value="confident2" id="confident2"/> 2
+        <input type="radio" name="confident" value="confident3" id="confident3"/> 3
+        <input type="radio" name="confident" value="confident4" id="confident4"/> 4
+        <input type="radio" name="confident" value="confident5" id="confident5"/> 5
+        <input type="radio" name="confident" value="confident6" id="confident6"/> 6
+        <input type="radio" name="confident" value="confident7" id="confident7"/> 7</fieldset>
+
+    <fieldset id="integrity"><label>6. Humans have integrity. </label>
+        <input type="radio" name="integrity" value="integrity1" id="integrity1"/> 1 
+        <input type="radio" name="integrity" value="integrity2" id="integrity2"/> 2
+        <input type="radio" name="integrity" value="integrity3" id="integrity3"/> 3
+        <input type="radio" name="integrity" value="integrity4" id="integrity4"/> 4
+        <input type="radio" name="integrity" value="integrity5" id="integrity5"/> 5
+        <input type="radio" name="integrity" value="integrity6" id="integrity6"/> 6
+        <input type="radio" name="integrity" value="integrity7" id="integrity7"/> 7</fieldset>
+
+    <fieldset id="dependable"><label>7. Humans are dependable (dependable in that they can be trusted in any situation)<a href="#" data-toggle="popover" rel="popover" data-trigger="hover" title="Definition of dependable" data-content="Dependable in this context means that a person can be trusted to provide support or assistance in times of need. This is different from reliable in that it is not task-specific or situation-specific. For example, 'I can depend on him for anything'."><sup>*</sup></a>. </label>
+        </a>
+        <input type="radio" name="dependable" value="dependable1" id="dependable1"/> 1 
+        <input type="radio" name="dependable" value="dependable2" id="dependable2"/> 2
+        <input type="radio" name="dependable" value="dependable3" id="dependable3"/> 3
+        <input type="radio" name="dependable" value="dependable4" id="dependable4"/> 4
+        <input type="radio" name="dependable" value="dependable5" id="dependable5"/> 5
+        <input type="radio" name="dependable" value="dependable6" id="dependable6"/> 6
+        <input type="radio" name="dependable" value="dependable7" id="dependable7"/> 7</fieldset>
+
+    <fieldset id="reliable"><label>8. Humans are reliable (reliable in that they can be trusted to do something satisfactorily)<a href="#" data-toggle="popover" rel="popover" data-trigger="hover" title="Definition of reliable" data-content="Reliable in this context means that a person can be trusted to do something competently and satisfactorily. This is different from dependable in that it is situation-specific. For example, 'She can give a reliable testimony'."><sup>*</sup></a>. </label>
+        <input type="radio" name="reliable" value="reliable1" id="reliable1"/> 1 
+        <input type="radio" name="reliable" value="reliable2" id="reliable2"/> 2
+        <input type="radio" name="reliable" value="reliable3" id="reliable3"/> 3
+        <input type="radio" name="reliable" value="reliable4" id="reliable4"/> 4
+        <input type="radio" name="reliable" value="reliable5" id="reliable5"/> 5
+        <input type="radio" name="reliable" value="reliable6" id="reliable6"/> 6
+        <input type="radio" name="reliable" value="reliable7" id="reliable7"/> 7</fieldset>   
+
+    <fieldset id="trust"><label>9. I can trust humans. </label>
+        <input type="radio" name="trust" value="trust1" id="trust1"/> 1 
+        <input type="radio" name="trust" value="trust2" id="trust2"/> 2
+        <input type="radio" name="trust" value="trust3" id="trust3"/> 3
+        <input type="radio" name="trust" value="trust4" id="trust4"/> 4
+        <input type="radio" name="trust" value="trust5" id="trust5"/> 5
+        <input type="radio" name="trust" value="trust6" id="trust6"/> 6
+        <input type="radio" name="trust" value="trust7" id="trust7"/> 7</fieldset>   
+
+    <fieldset id="familiar"><label>10. I am familiar with humans. </label>
+        <input type="radio" name="familiar" value="familiar1" id="familiar1"/> 1 
+        <input type="radio" name="familiar" value="familiar2" id="familiar2"/> 2
+        <input type="radio" name="familiar" value="familiar3" id="familiar3"/> 3
+        <input type="radio" name="familiar" value="familiar4" id="familiar4"/> 4
+        <input type="radio" name="familiar" value="familiar5" id="familiar5"/> 5
+        <input type="radio" name="familiar" value="familiar6" id="familiar6"/> 6
+        <input type="radio" name="familiar" value="familiar7" id="familiar7"/> 7</fieldset></form>  
+
+<input type="button" class="btn btn-info" onclick="validateForm('human', 'qualitiesH')" value="Submit first survey">
+<!--<a class="nextLink" href="javascript:validateForm()">Click here for next page</a>
+pass page navigation function from form validation function--> 
+</div>
+
+<div class="page" id="page4">
+
+<p><b> Imagine you had instead played this game against a <font color="red">robot</font> opponent. The following questions regard how you would make decisions in this game, and how they would be influenced by your opponent.</b></p><p></p>
+
+<form name="robot" method="post">
+
+    <fieldset id="motivationR"><label>1. What would motivate you in this game?</label> <p></p>
+        <input type="radio" name="motivation" value="mot1" id="mot1" required/> Beating the other player. <p></p>
+        <input type="radio" name="motivation" value="mot2" id="mot2"/> Maximizing my earnings. <p></p>
+        <input type="radio" name="motivation" value="mot3" id="mot3"/> Helping the other player. <p></p>
+        <input type="radio" name="motivation" value="mot4" id="mot4"/> Finishing as quickly as possible. <p></p>
+        <input type="radio" name="motivation" value="mot5" id="mot5"/> Other (please write in textbox) <p></p>
+    <textarea class="form-control" cols="120" name="Q6MultiLineTextInput" placeholder = "Write here..." rows="2" id="mot6R"></textarea></fieldset>
+
+    <fieldset id="qualitiesR"><label>2. When you think about a robot, which of these qualities come to mind?</label> <p></p>
+        <input type="checkbox" name="qualitiesR" value="qualities1" id="qualities1"/> Intelligence <p></p>
+        <input type="checkbox" name="qualitiesR" value="qualities2" id="qualities2"/> Faculty for sensations <p></p>
+        <input type="checkbox" name="qualitiesR" value="qualities3" id="qualities3"/> Rationality <p></p>
+        <input type="checkbox" name="qualitiesR" value="qualities4" id="qualities4"/> Sympathy <p></p>
+        <input type="checkbox" name="qualitiesR" value="qualities5" id="qualities5"/> Perfection <p></p>
+        <input type="checkbox" name="qualitiesR" value="qualities6" id="qualities6"/> Humanity <p></p>
+        <input type="checkbox" name="qualitiesR" value="qualities7" id="qualities7"/> Faculty for feelings <p></p>
+        <input type="checkbox" name="qualitiesR" value="qualities8" id="qualities8"/> Precision <p></p>
+        <input type="checkbox" name="qualitiesR" value="qualities9" id="qualities9"/> Life <p></p>
+        <input type="checkbox" name="qualitiesR" value="qualities10" id="qualities10"/> Reliability </fieldset>
+
+<p></p>
+
+<p><b> The following are asked on a Likert scale from 1 to 7 (1 = not at all, 7 = extremely). Please indicate how you would feel about these phrases as pertinent to the robot opponent in the game: </b></p><p></p>
+
+
+    <fieldset id="deceptiveR"><label>3. Robots are deceptive. </label>
+        <input type="radio" name="deceptive" value="deceptive1" id="deceptive1"/> 1 
+        <input type="radio" name="deceptive" value="deceptive2" id="deceptive2"/> 2
+        <input type="radio" name="deceptive" value="deceptive3" id="deceptive3"/> 3
+        <input type="radio" name="deceptive" value="deceptive4" id="deceptive4"/> 4
+        <input type="radio" name="deceptive" value="deceptive5" id="deceptive5"/> 5
+        <input type="radio" name="deceptive" value="deceptive6" id="deceptive6"/> 6
+        <input type="radio" name="deceptive" value="deceptive7" id="deceptive7"/> 7</fieldset>
+
+    <fieldset id="underhandedR"><label>4. Robots behave in an underhanded manner. </label>
+        <input type="radio" name="underhanded" value="underhanded1" id="underhanded1"/> 1 
+        <input type="radio" name="underhanded" value="underhanded2" id="underhanded2"/> 2
+        <input type="radio" name="underhanded" value="underhanded3" id="underhanded3"/> 3
+        <input type="radio" name="underhanded" value="underhanded4" id="underhanded4"/> 4
+        <input type="radio" name="underhanded" value="underhanded5" id="underhanded5"/> 5
+        <input type="radio" name="underhanded" value="underhanded6" id="underhanded6"/> 6
+        <input type="radio" name="underhanded" value="underhanded7" id="underhanded7"/> 7</fieldset>
+
+
+    <fieldset id="confidentR"><label>5. I am confident in robots. </label>
+        <input type="radio" name="confident" value="confident1" id="confident1"/> 1 
+        <input type="radio" name="confident" value="confident2" id="confident2"/> 2
+        <input type="radio" name="confident" value="confident3" id="confident3"/> 3
+        <input type="radio" name="confident" value="confident4" id="confident4"/> 4
+        <input type="radio" name="confident" value="confident5" id="confident5"/> 5
+        <input type="radio" name="confident" value="confident6" id="confident6"/> 6
+        <input type="radio" name="confident" value="confident7" id="confident7"/> 7</fieldset>
+
+
+    <fieldset id="integrityR"><label>6. Robots have integrity. </label>
+        <input type="radio" name="integrity" value="integrity1" id="integrity1"/> 1 
+        <input type="radio" name="integrity" value="integrity2" id="integrity2"/> 2
+        <input type="radio" name="integrity" value="integrity3" id="integrity3"/> 3
+        <input type="radio" name="integrity" value="integrity4" id="integrity4"/> 4
+        <input type="radio" name="integrity" value="integrity5" id="integrity5"/> 5
+        <input type="radio" name="integrity" value="integrity6" id="integrity6"/> 6
+        <input type="radio" name="integrity" value="integrity7" id="integrity7"/> 7</fieldset>
+
+
+    <fieldset id="dependableR"><label>7. Robots are dependable (dependable in that they can be trusted in any situation)<a href="#" data-toggle="popover" rel="popover" data-trigger="hover" title="Definition of dependable" data-content="Dependable in this context means that a robot can be trusted to provide support or assistance in times of need. This is different from reliable in that it is not task-specific or situation-specific. For example, 'I can depend on it for anything'."><sup>*</sup></a>.</label>
+        <input type="radio" name="dependable" value="dependable1" id="dependable1"/> 1 
+        <input type="radio" name="dependable" value="dependable2" id="dependable2"/> 2
+        <input type="radio" name="dependable" value="dependable3" id="dependable3"/> 3
+        <input type="radio" name="dependable" value="dependable4" id="dependable4"/> 4
+        <input type="radio" name="dependable" value="dependable5" id="dependable5"/> 5
+        <input type="radio" name="dependable" value="dependable6" id="dependable6"/> 6
+        <input type="radio" name="dependable" value="dependable7" id="dependable7"/> 7</fieldset>
+
+
+    <fieldset id="reliableR"><label>8. Robots are reliable (reliable in that they can be trusted to do something satisfactorily)<a href="#" data-toggle="popover" rel="popover" data-trigger="hover" title="Definition of reliable" data-content="Reliable in this context means that a robot can be trusted to do something competently and satisfactorily. This is different from dependable in that it is situation-specific. For example, 'It can complete this task reliably'."><sup>*</sup></a>. </label>
+        <input type="radio" name="reliable" value="reliable1" id="reliable1"/> 1 
+        <input type="radio" name="reliable" value="reliable2" id="reliable2"/> 2
+        <input type="radio" name="reliable" value="reliable3" id="reliable3"/> 3
+        <input type="radio" name="reliable" value="reliable4" id="reliable4"/> 4
+        <input type="radio" name="reliable" value="reliable5" id="reliable5"/> 5
+        <input type="radio" name="reliable" value="reliable6" id="reliable6"/> 6
+        <input type="radio" name="reliable" value="reliable7" id="reliable7"/> 7</fieldset>  
+
+
+    <fieldset id="trustR"><label>9. I can trust robots. </label>
+        <input type="radio" name="trust" value="trust1" id="trust1"/> 1 
+        <input type="radio" name="trust" value="trust2" id="trust2"/> 2
+        <input type="radio" name="trust" value="trust3" id="trust3"/> 3
+        <input type="radio" name="trust" value="trust4" id="trust4"/> 4
+        <input type="radio" name="trust" value="trust5" id="trust5"/> 5
+        <input type="radio" name="trust" value="trust6" id="trust6"/> 6
+        <input type="radio" name="trust" value="trust7" id="trust7"/> 7</fieldset>    
+
+    <fieldset id="familiarR"><label>10. I am familiar with robots. </label>
+        <input type="radio" name="familiar" value="familiar1" id="familiar1"/> 1 
+        <input type="radio" name="familiar" value="familiar2" id="familiar2"/> 2
+        <input type="radio" name="familiar" value="familiar3" id="familiar3"/> 3
+        <input type="radio" name="familiar" value="familiar4" id="familiar4"/> 4
+        <input type="radio" name="familiar" value="familiar5" id="familiar5"/> 5
+        <input type="radio" name="familiar" value="familiar6" id="familiar6"/> 6
+        <input type="radio" name="familiar" value="familiar7" id="familiar7"/> 7</fieldset></form>
+
+    <input type="button" class="btn btn-info" onclick="validateForm('robot', 'qualitiesR')" value="Submit second survey"> </div>
+    <!--<a class="nextLink" href="javascript:Debrief()">Click here for next page</a></div>-->
+
+<div class="page" id="page5">
+<fieldset>
+    <h5><b>Debriefing statement</b></h5><p></p>
+<p> Thank you for completing the game! The goal of this study is to identify differences in how people (you) trust humans and robots differently. You just played a hybrid of the Iterated Prisoner's Dilemma and the Investment Game, both of which are standard game theory scenarios used to test rationality and trust. Two different groups of participants were included: those who played against a "robot" opponent, and those who played against a "human" opponent. In reality, the "human" opponent was just the same strategy algorithm used in the "robot" opponent, but this was withheld from players until they completed the task. The information gathered in this study will be used to explore this idea of human-robot interaction versus human-human interaction. </p>
+<p></p>
+<p>Please note that participation is entirely voluntary, so if you feel uncomfortable with your involvement in the study and wish to withdraw, you may do so. <i>If you choose to withdraw, you will be compensated the default amount but lose any bonuses</i>. </p> 
+
+<p>If you have questions or would like additional information about this study, please contact Jim Boerkoel at boerkoel@cs.hmc.edu.<p></p></fieldset>
+
+<!--complete the debriefing page -->
+
+<fieldset><label> After reading the debriefing, would you like to participate or withdraw from the study? Remember to hit SUBMIT.</label>
+<form name="participation" method="POST" > <!-- action = "https://workersandbox.mturk.com/mturk/externalSubmit" -->
+    <input type="radio" name="participation" value="participate" id="participate"/> Participate <p></p>
+    <input type="radio" name="participation" value="withdraw" id="withdraw"/> Withdraw <p></p>
+
+    <input type="hidden" id="assignmentId" value="{{ assignment_id }}" name="assignmentId"/>
+    <input type="hidden" id="workerId" value="{{ worker_id }}" name="workerId"/>
+    <input type="hidden" id="hitId" value="{{ hit_id }}" name="hitId"/>
+<fieldset><label>Copy and Paste me into the Google Form after hitting submit!</label><textarea class="form-control" cols="5" name="Q6MultiLineTextInput" id="survey+answer"></textarea></fieldset>
+<input type="button" class="btn btn-info" onclick="sendResponse()" value="Submit"></fieldset> <!-- REMEMBER TO PUT THIS BACK IN!!!! TYPE=SUBMIT -->
+    </form>
+</div>
+
+
+<div class="page" id="page6">
+
+</div>
+
+<!-- End Content Body -->
+</section>
+<!-- close container -->
+<style type="text/css">fieldset {
+    padding: 10px;
+    background:#fbfbfb;
+    border-radius:5px;
+    margin-bottom:5px;
+}
+</style>
+
+<script>
+// Progress bar
+
+var n = 16;
+var iter = 0;
+var human_moves = [];   //keep or return
+var computer_moves = [];
+var human_coin_entrust = [];    // number of coins in transaction
+var computer_coin_entrust = [];
+var computer_points = 0;    // total coin count
+var computer_init = 10;     // initial amount given in every round
+var human_points = 0;
+var human_init = 10;
+var human_running_total = 0;
+var computer_running_total = 0;
+var human_running_average = 0;
+var computer_running_average = 0;
+var max_wait = 0;
+var min_computer_wait = 1000;
+
+var startTime = new Date();
+var time = [];  // how long it takes to choose keep or return coins
+var compTime = [];
+var humanTime = [];
+time.push(startTime);
+
+//console.log("loaded")
+
+// ============================= PAGE NAVIGATION ==============================================
+var currentTrial = 1;
+
+function NextTrial() {
+
+    var accepted = getUrlVars()['workerId'];
+    console.log(accepted);
+    // if (accepted == null) {
+    //     alert("Please accept the HIT before moving on");
+    // }
+    //console.log("next page")
+
+    // CHANGE THIS WHEN TURKING
+    if (accepted == null) {
+        var checkedValue = $("input[type=radio]:checked", "#page" + currentTrial).val();
+        if (checkedValue) {
+            // shows modal for 5 seconds, increase this time
+            waitingDialog.show("Waiting for more players to join the queue...");
+            setTimeout(function() {waitingDialog.hide();}, 5000);
+
+            document.getElementById("War").style.display = 'none';
+            document.getElementById("Peace").style.display = 'none';
+            document.getElementById("sendEntrustment").style.display = 'none';
+            document.getElementById("entrust").style.display = 'none';
+            $("#page" + currentTrial).hide();
+            $("#page" + (currentTrial+1)).show();
+            currentTrial++;
+        } else {
+            alert('Please consent before moving on!');
+        }
+    } 
+}
+
+function NextPage() {
+    //console.log(iter);
+    //alert("You're almost done! Please click OK to move to the next page."); TOOK OUT TO DISPLAY FINAL ANSWERS
+    $("#page" + currentTrial).hide();
+    $("#page" + (currentTrial+1)).show();
+    window.scrollTo(0,0);
+    //modal for waiting queue here
+    currentTrial++;
+}
+
+function Debrief() {
+    //alert("You're almost done! Please click OK to move to the next page.")
+    $("#page" + currentTrial).hide();
+    $("#page" + (currentTrial+1)).show();
+    window.scrollTo(0,0);   // works
+    currentTrial++;
+}
+
+$(document).ready(function() {
+    $('[data-toggle="popover"]').popover();
+});
+
+
+// ========================================= GET URL PARAMETERS FOR SUBMISSION =====================
+
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
+// =========================================== FORM VALIDATION =====================================
+
+function validateForm(formName, qualitiesName) {
+    // formName = "human" or "robot", qualitiesName = "qualitiesR" or "qualitiesH"
+    var motivation_element = document.forms[formName]["motivation"];
+    var motivation_text = document.forms[formName]["Q6MultiLineTextInput"];
+    var deceptive_element = document.forms[formName]["deceptive"];
+    var underhanded_element = document.forms[formName]["underhanded"];
+    var confident_element = document.forms[formName]["confident"];
+    var integrity_element = document.forms[formName]["integrity"];
+    var dependable_element = document.forms[formName]["dependable"];
+    var reliable_element = document.forms[formName]["reliable"];
+    var trust_element = document.forms[formName]["trust"];
+    var familiar_element = document.forms[formName]["familiar"];
+    var checkbox_element = document.getElementsByName(qualitiesName);
+    var qualities = "";
+
+    if (formName == "human") {
+        surveyH = "";
+        surveyH = validateIntermmediate(motivation_element, motivation_text, deceptive_element, underhanded_element, confident_element, integrity_element, dependable_element, reliable_element, trust_element, familiar_element, checkbox_element, qualities, surveyH, "human", "qualitiesH");
+        if (surveyH == false) {
+            window.scrollTo(0,0);
+            alert('Please answer all the questions!');
+        }
+
+        else {
+            alert("One more survey left!"); // change this line if other survey
+            Debrief();
+        }
+    }
+
+    else {
+        surveyR = "";
+        surveyR = validateIntermmediate(motivation_element, motivation_text, deceptive_element, underhanded_element, confident_element, integrity_element, dependable_element, reliable_element, trust_element, familiar_element, checkbox_element, qualities, surveyR, "robot", "qualitiesR");
+        if (surveyR == false) {
+            window.scrollTo(0,0);
+            alert('Please answer all the questions!');
+        }
+
+        else {
+            alert("Thank you! You are being directed to the debriefing page");
+            Debrief();
+        }
+    }
+}
+
+function changeObjectBorder(objID, classname) {
+    document.getElementById(objID).className = classname;
+}
+
+function validateIntermmediate(motivation, motivation_text, deceptive, underhanded, confident, integrity, dependable, reliable, trust, familiar, checkbox, qualities, surveytype, formName, qualitiesName) {
+
+    var motivation_value = motivation.value;
+    var motivation_text = motivation_text.value;
+    var deceptive_value = deceptive.value;
+    var underhanded_value = underhanded.value;
+    var confident_value = confident.value;
+    var integrity_value = integrity.value;
+    var dependable_value = dependable.value;
+    var reliable_value = reliable.value;
+    var trust_value = trust.value;
+    var familiar_value = familiar.value;
+
+    var haschecked = false;
+
+    for (var i=0; i<checkbox.length; i++) {
+        if (checkbox[i].checked) {
+            qualities = qualities + checkbox[i].value + ',';
+            haschecked = true;
+        }
+    }
+
+    // check if all questions have been answered
+    var q_name="qualities";
+    var mot6 = "mot6H";
+    var list_null = [motivation_value, deceptive_value, underhanded_value, confident_value, integrity_value, dependable_value, reliable_value, trust_value, familiar_value];
+
+    var list_form = [motivation, deceptive, underhanded, confident, integrity, dependable, reliable, trust, familiar];
+
+    var list_fieldsets = ["motivation", "deceptive", "underhanded", "confident", "integrity", "dependable", "reliable", "trust", "familiar"];
+    var text_index = 5;
+    var start_index = 1;
+
+    if (formName == 'robot') {
+        q_name = "qualitiesR";
+        list_fieldsets = ["motivationR", "deceptiveR", "underhandedR", "confidentR", "integrityR", "dependableR", "reliableR", "trustR", "familiarR"];
+        mot6 = "mot6R";
+        text_index = 4;
+        start_index = 0;
+    }
+
+    if (haschecked == false) {
+        // highlight haschecked area
+        changeObjectBorder(q_name, 'border1');
+        //return false;
+    }
+    else {
+        changeObjectBorder(q_name, "");
+    }
+
+    var filledout = true;
+    var result = "begin";   
+    for (var x=0; x<list_null.length; x++) {
+        var radio_filled = false;
+        var form_element = list_form[x];
+        for (var i=start_index, len=form_element.length; i<len; i++) {
+            console.log(form_element, list_form[x][i].checked);
+            if (list_form[x][i].checked) {
+                radio_filled = true;
+                console.log("check this", list_form[x][i].value);
+                result = result + '/' + list_form[x][i].value;
+            }
+        }
+        console.log("radio filled", list_fieldsets[x], radio_filled);
+        // if (list_null[x] == null || list_null[x] == "") {
+        //     //highlight
+        //     changeObjectBorder(list_fieldsets[x], 'border1'); 
+        //     filledout = false;
+        // }
+        if (radio_filled == false) {
+            changeObjectBorder(list_fieldsets[x], 'border1'); 
+            filledout = false;
+        }
+        else {
+            //list_null[x].style.backgroundcolor='';
+            changeObjectBorder(list_fieldsets[x], "");
+        }
+    }
+
+    //console.log("motivation value is", motivation_value, "motivation text is", motivation_text);
+    //console.log("motivation text", motivation_text, motivation_text.length, list_form[0][text_index].checked);
+    if (motivation_text.length < 1 && list_form[0][text_index].checked==true) {
+        //alert("Please write in the text box");
+        changeObjectBorder(mot6, 'border1');
+        return false;
+    }
+    else {
+        changeObjectBorder(mot6, '');
+    }
+
+    if (filledout == false || haschecked == false) {
+        return false;
+    }
+
+    else {
+        var surveytype = result + "/" + qualities + "/" + motivation_text;   //all answers kept here
+        // filling in required spaces in submitted form
+
+        var assignment = getUrlVars()['assignmentId'];
+        var worker = getUrlVars()['workerId'];
+        var hit = getUrlVars()['hitId'];
+        document.getElementById("assignmentId").value = assignment;
+        document.getElementById("workerId").value = worker;
+        document.getElementById("hitId").value = hit;
+        //alert(assignment, worker, hit);
+        return surveytype;
+    }
+}
+
+// ==================================== FINAL RESULT, DISPLAYS ========================================================
+
+function sendResponse() {
+    //console.log("participation field is", document.forms["participation"]["participation"]);
+    var agree = document.forms["participation"]["participation"];
+    console.log(agree);
+    var inputstring = printanswer();
+    if (agree[0].checked) {
+        var participate_string = "participation:P;_;_;" + inputstring;
+        document.getElementById("survey+answer").value=participate_string;
+        alert("Thank you for participating!");
+        //Debrief();
+    }
+    else if (agree[1].checked) {
+        console.log("withdrew");
+        var withdraw_string = "participation:W;_;_;" + inputstring;
+        console.log(withdraw_string);
+        document.getElementById("survey+answer").value=withdraw_string;
+        alert("Thank you for participating!");
+        //Debrief();
+    }
+    else {
+        alert("Please choose to either participate or withdraw.");
+    }
+    
+}
+
+function printanswer() {
+    var string_human_moves= human_moves.join(",");
+    var string_computer_moves= computer_moves.join(",");
+    var string_human_coin_entrust= human_coin_entrust.join(",");
+    var string_computer_coin_entrust=computer_coin_entrust.join(",");
+    var string_time = time.join(",");
+    var string_human_time = humanTime.join(",");
+    var string_comp_time = compTime.join(",");
+    var total = "id:" + "HUMAN" + ";_;_;" + "Moves:" + string_human_moves + ";_;_;" + "Entrust:" + string_human_coin_entrust + ";_;_;" + "Points:" + human_running_average + ";_;_;" + "HumanTime:" + string_human_time + ";_;_;" + "id:" + "COMPUTER" + ";_;_;" + "Moves:" + string_computer_moves + ";_;_;" + "Entrust:" + string_computer_coin_entrust + ";_;_;" + "Points:" + computer_running_average + ";_;_;" + "CompTime:" + string_comp_time + ";_;_;" + "Iter:" + iter + ";_;_;" + "SurveyR:" + surveyR + ";_;_;" + "SurveyH:" + surveyH + ";_;_;" + "Time:" + string_time;
+    console.log(total);
+    //console.log("computer coin entrust", string_computer_coin_entrust)
+    return total;
+}
+
+function displayMoves(pay) {
+    document.getElementById("resultIdentification").style.fontSize="medium";
+    document.getElementById("resultIdentification").innerHTML = "Round has ended. Updated results:";
+    //document.getElementById("resultIdentification").style.backgroundColor = "#4DDB4D";
+    changeObjectBorder("previousRoundResults", 'borderGreen');
+    document.getElementById("lastMove").innerHTML=lastMove(computer_moves);
+    document.getElementById("mylastmove").innerHTML=lastMove(human_moves);
+    document.getElementById("humYears").innerHTML=human_points;
+    document.getElementById("compYears").innerHTML=computer_points;
+
+    if (pay[0] < 0) {
+        var sign_hum = "-";
+    }
+    else {
+        var sign_hum = "+";
+    }
+    if (pay[1] < 0) {
+        var sign_comp = "-";
+    }
+    else {
+        var sign_comp = "+";
+    }
+
+    var change_hum = sign_hum + Math.abs(pay[0]);
+    var change_comp = sign_comp + Math.abs(pay[1]);
+    document.getElementById("humincrease").innerHTML=change_hum;
+    document.getElementById("compincrease").innerHTML=change_comp;
+    document.getElementById("humAverage").innerHTML = human_running_average;
+    document.getElementById("compAverage").innerHTML = computer_running_average;
+    //console.log("computer moves", computer_coin_entrust);
+    //console.log("human moves", human_coin_entrust);
+
+}
+
+function lastMove(input_list) {
+    if (iter >= 0) {
+        last = input_list[input_list.length-1];
+        if (last == 'C') {
+            return "Return coins";
+        }
+        else {
+            return "Keep coins";
+        }
+    }
+}
+
+//======================================== STRATEGIES ================================================
+function entrust_EA() {
+    console.log("iter is", iter);
+    if (iter === 0) {
+        var computer_entrust = 3;
+        return computer_entrust;
+    }
+    else if (iter === 1) {
+        return human_coin_entrust[human_coin_entrust.length-1];
+    }
+    else {
+        if (human_moves[human_moves.length-1] == 'D') {
+            return 1;
+        }
+        else if (computer_moves[computer_moves.length-1] == 'D') {
+            return 1;
+        }
+        else if (human_moves[human_moves.length-1] == 'C' && computer_coin_entrust[computer_coin_entrust.length-1] > 8) {
+            return 10;          
+        }
+        else {
+            var human_entrust_sum = 0;
+            var computer_entrust_sum = 0;
+            var lastmoveH = human_coin_entrust[human_coin_entrust.length-1];
+            var lastmoveC = computer_coin_entrust[computer_coin_entrust.length-1];
+            for (var i=0; i<human_coin_entrust.length-1; i++) {
+                human_entrust_sum = human_entrust_sum + human_coin_entrust[i];
+                computer_entrust_sum = computer_entrust_sum + computer_coin_entrust[i];
+            }
+            var human_entrust_average = human_entrust_sum/(human_coin_entrust.length);
+            var computer_entrust_average = computer_entrust_sum/(computer_coin_entrust.length);
+            human_entrust_expo = Math.round((human_entrust_average*0.5+lastmoveH*1.5)/2);    // exponential average
+            computer_entrust_expo = Math.round((computer_entrust_average*0.5+lastmoveC*1.5)/2);
+
+            console.log("exponential average is", human_entrust_expo, "computer expo", computer_entrust_expo);
+            var list = [];
+            var upper = 0;
+            var lower = 0;
+            if (lastmoveH - human_coin_entrust[human_coin_entrust.length-2] > 1 || lastmoveH > human_entrust_expo) {
+                upper = 3;
+                lower = 0;
+            }
+            else {
+                upper = 1;
+                lower = 0;
+            }
+            var list = [lastmoveH + upper, lastmoveH - lower, computer_entrust_expo+upper];
+            computer_entrust = list[Math.floor(Math.random()*list.length)];
+            if (lastmoveH - lastmoveC > 2) {
+                computer_entrust = lastmoveH + 3;   // if the difference is greater than 2
+            }
+            else if (lastmoveH == human_coin_entrust[human_coin_entrust.length-2]) {
+                computer_entrust = lastmoveH + 2;
+            }
+            if (computer_entrust > 10) {
+                computer_entrust = 10;
+            }
+            else if (computer_entrust < 1) {
+                computer_entrust = 1;
+            }
+            else if (lastmoveH == 1 && human_coin_entrust[human_coin_entrust.length-2] == 1) {
+                var list = [2, 3];
+                computer_entrust = list[Math.floor(Math.random()*list.length)];   // break a line of zeros
+            }
+            return computer_entrust;
+        }
+    }
+}
+
+
+function tit4tat() {
+    if (iter === 0) {
+        return 'C';
+    }else {
+        //console.log(human_moves);
+        return human_moves[human_moves.length - 1];
+    }
+}
+
+function adaptive_tit4tat() {
+    var human_defect = "false";
+    if (iter !== 8) {
+        computer_move = 'C';
+        if (iter < 8 && human_moves[human_moves.length-1] == 'D') {
+            human_defect = "true";
+        }
+    }
+    else if (iter === 8) {
+        if (human_defect == "true") {
+            computer_move = 'C';
+        }
+        else {
+            computer_move = 'D';
+        }
+
+    }
+    // var rc = 0.2;   // cooperative r
+    // var rd =  0.2;  // defective r
+    // var rmax = 0.3  // maximum r
+    // var rmin = 0.1 // minimum r
+    // var threshold = 2;  // word is cooperative enough (above this threshold)
+    // var window = 5;    // window of # of moves
+    // //var r = 0.5;
+    // var world = 0.5;
+    // if (iter === 0) {
+    //     return 'C';
+    // }
+    // else {
+    //     // below is the mechanism described in adaptive TFT paper
+    //     if (iter === window) {
+    //         var coincide = 0;
+    //         for (var i=0; i<human_moves.length-1; i++) {
+    //             if (human_moves[i] == computer_moves[i]) {
+    //                 coincide = coincide + 1;
+    //             }
+    //         }
+
+    //         if (coincide >= threshold) {
+    //             rc = rmin;
+    //             rd = rmax;
+    //         }
+    //         else {
+    //             rc = rmax;
+    //             rd = rmin;
+    //         }
+    //     }
+
+    //     last = human_moves[human_moves.length-1];
+    //     if (last == 'C') {
+    //         world = world + rc*(1-world);
+    //     }
+    //     else {
+    //         world = world + rd*(0-world);
+    //     }
+    //     console.log(world);
+    //     if (world >= 0.5) {
+    //         computer_move = 'C';
+    //     }
+    //     else {
+    //         computer_move = 'D';
+    //     }
+    //     // TOOK OUT FOLLOWING STRATEGY MOVE
+    //     // if (computer_coin_entrust[computer_coin_entrust.length-1] > 8 && human_coin_entrust[human_coin_entrust.length-1] > 8) {
+    //     //     var list = ['C', 'C', 'C', 'D'];    // 1:3 chance that I take your coins
+    //     //     computer_move = list[Math.floor(Math.random()*list.length)];    // if i entrusted more than the other person by 3
+    //     // }
+    return computer_move; 
+}
+
+// ============================================ ONCLICK =================================================
+
+function onClickMatcher() {
+    document.getElementById("Matcher").disabled=true;
+    document.getElementById("Matcher").innerHTML="...Waiting for opponent to join...";
+    setTimeout("opponentJoined()", 3000);
+}
+
+function opponentJoined() {
+    alert("Your opponent has joined the game!");
+    document.getElementById("Matcher").innerHTML="Opponent has joined";
+    document.getElementById("War").style.display = 'inline';
+    document.getElementById("Peace").style.display = 'inline';
+    document.getElementById("sendEntrustment").style.display = 'block';
+    document.getElementById('entrust').style.display = 'block';
+    document.getElementById("sendEntrustment").disabled=false;
+}
+
+function onClickSendEntrustment() {
+    document.getElementById("War").disabled=false;
+    document.getElementById("Peace").disabled=false;
+    document.getElementById("sendEntrustment").innerHTML="Entrustment sent";
+    document.getElementById("sendEntrustment").disabled = true;
+    document.getElementById("entrust").disabled = true;
+
+    if (iter < n) {
+        comp_entrust = entrust_EA();
+    }
+    document.getElementById("comp_entrusted").innerHTML=comp_entrust;
+}
+
+function onClickWar() {
+    hum = 'D';
+    onClickWarPeace();
+}
+
+
+function onClickPeace() {
+    hum = 'C';
+    onClickWarPeace();
+}
+function onClickWarPeace() {
+    document.getElementById("War").disabled = false;
+    document.getElementById("War").innerHTML = "Keep opponent's coins";
+    document.getElementById("Peace").disabled = false;
+    document.getElementById("Peace").innerHTML = "Return opponent's coins";
+    if (iter < n) {
+        comp = adaptive_tit4tat();
+        var selection = document.getElementById("entrust");
+        hum_entrust = parseInt(selection.options[selection.selectedIndex].value);
+        human_moves.push(hum);
+        human_coin_entrust.push(hum_entrust);
+        computer_moves.push(comp);
+        computer_coin_entrust.push(comp_entrust);
+        var pay = calculate_score();
+        human_points = human_init + pay[0];
+        human_running_total = human_running_total + human_points;
+        computer_points = computer_init + pay[1];
+        computer_running_total = computer_running_total + computer_points;
+        if (n > 0) {
+            human_running_average = Math.round(human_running_total/(iter+1));
+            computer_running_average = Math.round(computer_running_total/(iter+1));
+        }
+        else {
+            human_running_average = human_running_total;
+            computer_running_average = computer_running_total;
+        }
+        console.log(iter, "running total is", human_running_total, computer_running_total);
+        var temp = displayMoves(pay);
+    }
+    iter ++;
+    document.getElementById("War").disabled = true;
+    document.getElementById("Peace").disabled = true;
+    document.getElementById("sendEntrustment").disabled = false;
+    document.getElementById("entrust").disabled = false;
+    document.getElementById("sendEntrustment").innerHTML="Send entrustment";
+    document.getElementById("comp_entrusted").innerHTML = ""; 
+    if (iter == n) {
+        alert("You have finished the game portion! Your earned an average of " + human_running_average + " coins per round. Click OK to move to the survey page!")
+        NextPage();
+    }
+}
+
+
+// ============================================== DELAYS ====================================================
+
+function delayEntrustment() {
+    document.getElementById("sendEntrustment").disabled = true;
+    document.getElementById("sendEntrustment").innerHTML ="...Waiting for opponent's move...";
+    if (iter !== 0) {
+        document.getElementById("resultIdentification").innerHTML = "";
+        //document.getElementById("resultIdentification").style.backgroundColor = "#FF5C33";
+        changeObjectBorder("previousRoundResults", "");
+    }
+
+    iterE = iter*2;
+    iterL = iter*2+1;
+    computer_wait = delay(iterE, iterL);
+    setTimeout("onClickSendEntrustment()", computer_wait);
+}
+
+function delayWar(button) {
+    delayDisplays();
+
+    iterE = iter*2+1;
+    iterL = iter*2+2;
+    computer_wait = delay(iterE, iterL);
+
+    setTimeout("onClickWar()", computer_wait);
+}
+
+function delayPeace(button) {
+    delayDisplays();
+
+    iterE = iter*2+1;
+    iterL = iter*2+2;
+    computer_wait = delay(iterE, iterL);
+
+    setTimeout("onClickPeace()", computer_wait);
+}
+
+function delay(iterE, iterL) {
+    var clickTime = new Date();
+    time.push(clickTime);
+    if (iter ===0) {
+        var computer_wait = Math.floor((Math.random()*(5-1+1)+1));    // wait between 1 and 10 seconds Math.floor(Math.random()*(max-min+1)+min)
+        compTime.push(computer_wait);
+        humanTime.push(time[iterL]-time[iterE]);  //put in here to capture first move time?
+    }
+    else {
+        //console.log("length of time array", time.length, "early and late iter", iterE, iterL, "comp time length", compTime.length);
+        var prev = time[iterL]-time[iterE]; // time between send entrustment and keep
+        console.log(iter, "time between this and last button click", prev);
+        var prev_wait = compTime[iterE-1]; 
+        console.log("previous computer wait", prev_wait);
+        var human_move_time = prev-prev_wait;
+        //console.log("move time was WP", human_move_time);
+        humanTime.push(human_move_time);
+        console.log("difference", human_move_time-prev_wait, "human move time", human_move_time);
+        if (human_move_time > 2000) {   // if they waited for more than 2000 seconds after comp_wait expired
+            var computer_wait = 1000;
+        }
+        else {
+            var computer_wait = human_move_time;
+            var random = Math.floor((Math.random()*(computer_wait)+1));
+            var computer_wait_decision = [random + 2000, random + 5000, random + 3500, min_computer_wait];   // wait random amount of time 
+            console.log("computer wait deicison", computer_wait_decision);
+            computer_wait = computer_wait_decision[Math.floor(Math.random()*computer_wait_decision.length)];    // 50% no wait, 50% some wait
+        }
+        compTime.push(computer_wait);
+        //console.log("computer wait time is", computer_wait);
+        return computer_wait;
+    }
+}
+
+function delayDisplays() {
+    document.getElementById("Peace").disabled = true;
+    document.getElementById("War").disabled = true;
+    document.getElementById("War").innerHTML = "...Waiting for opponent's move...";
+    document.getElementById("Peace").innerHTML = "...Waiting for opponent's move...";
+}
+// ======================================================== GENERAL ================================================
+
+function play_move_computer() {
+    var comp = entrust_exponentialAverage();    //global, make it 
+    document.getElementById("comp_entrusted").innerHTML=comp[1];
+    return comp;
+}
+
+function calculate_score() {    // net gain
+    if (hum == 'C' && comp == 'C') {
+        behavior = [hum_entrust, comp_entrust];
+        //console.log("in here");
+    }
+    else if (hum == 'D' && comp == 'D') {
+        behavior = [comp_entrust-hum_entrust, hum_entrust-comp_entrust];
+    }
+    else if (hum == 'D' && comp == 'C') {
+        behavior = [hum_entrust+comp_entrust, 0-comp_entrust]
+    }
+    else {
+        behavior = [0-hum_entrust, hum_entrust+comp_entrust];
+    }
+    //console.log(tuple, behavior);
+    //console.log("behavior is", behavior);
+    return behavior;
+}    
+    
+
+//============================================================= MODAL ===========================================
+
+/**
+ * Module for displaying "Waiting for..." dialog using Bootstrap
+ *
+ * @author Eugene Maslovich <ehpc@em42.ru>
+ */
+
+
+var waitingDialog = waitingDialog || (function ($) {
+    'use strict';
+
+    /**
+     * Dialog DOM constructor
+     */
+    function constructDialog($dialog) {
+        // Deleting previous incarnation of the dialog
+        if ($dialog) {
+            $dialog.remove();
+        }
+        return $(
+            '<div class="modal fade" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true" style="padding-top:15%; overflow-y:visible;">' +
+                '<div class="modal-dialog modal-m">' +
+                    '<div class="modal-content">' +
+                        '<div class="modal-header" style="display: none;"></div>' +
+                        '<div class="modal-body">' +
+                            '<div class="progress progress-striped active" style="margin-bottom:0;">' +
+                                '<div class="progress-bar" style="width: 100%"></div>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>' +
+            '</div>'
+        );
+    }
+
+    // Dialog object
+    var $dialog;
+
+    return {
+        /**
+         * Opens our dialog
+         * @param message Custom message
+         * @param options Custom options:
+         *                options.headerText - if the option is set to boolean false, 
+         *                  it will hide the header and "message" will be set in a paragraph above the progress bar.
+         *                  When headerText is a not-empty string, "message" becomes a content 
+         *                  above the progress bar and headerText string will be set as a text inside the H3;
+         *                options.headerSize - this will generate a heading corresponding to the size number. Like <h1>, <h2>, <h3> etc;
+         *                options.headerClass - extra class(es) for the header tag;
+         *                options.dialogSize - bootstrap postfix for dialog size, e.g. "sm", "m";
+         *                options.progressType - bootstrap postfix for progress bar type, e.g. "success", "warning";
+         *                options.contentElement - determines the tag of the content element. Defaults to "p", which will generate a <p> tag;
+         *                options.contentClass - extra class(es) for the content tag.
+         */
+        show: function (message, options) {
+            // Assigning defaults
+            if (typeof options === 'undefined') {
+                options = {};
+            }
+            if (typeof message === 'undefined') {
+                message = 'Loading';
+            }
+            var settings = $.extend({
+                headerText: '',
+                headerSize: 3,
+                headerClass: '',
+                dialogSize: 'm',
+                progressType: '',
+                contentElement: 'p',
+                contentClass: 'content',
+                onHide: null // This callback runs after the dialog was hidden
+            }, options),
+            $headerTag, $contentTag;
+            
+            $dialog = constructDialog($dialog);
+
+            // Configuring dialog
+            $dialog.find('.modal-dialog').attr('class', 'modal-dialog').addClass('modal-' + settings.dialogSize);
+            $dialog.find('.progress-bar').attr('class', 'progress-bar');
+            if (settings.progressType) {
+                $dialog.find('.progress-bar').addClass('progress-bar-' + settings.progressType);
+            }
+
+            // generate header tag
+            $headerTag = $('<h' + settings.headerSize + ' />');
+            $headerTag.css({ 'margin': 0 });
+            if (settings.headerClass) {
+                $headerTag.addClass(settings.headerClass);
+            }
+
+            // generate content tag
+            $contentTag = $('<' + settings.contentElement + ' />');
+            if (settings.contentClass) {
+                $contentTag.addClass(settings.contentClass);
+            }
+
+            if (settings.headerText === false) {
+                $contentTag.html(message);
+                $dialog.find('.modal-body').prepend($contentTag);
+            }
+            else if (settings.headerText) {
+                $headerTag.html(settings.headerText);
+                $dialog.find('.modal-header').html($headerTag).show();
+
+                $contentTag.html(message);
+                $dialog.find('.modal-body').prepend($contentTag);
+            }
+            else {
+                $headerTag.html(message);
+                $dialog.find('.modal-header').html($headerTag).show();
+            }
+
+            // Adding callbacks
+            if (typeof settings.onHide === 'function') {
+                $dialog.off('hidden.bs.modal').on('hidden.bs.modal', function (e) {
+                    settings.onHide.call($dialog);
+                });
+            }
+            // Opening dialog
+            $dialog.modal();
+        },
+        /**
+         * Closes dialog
+         */
+        hide: function () {
+            $dialog.modal('hide');
+        }
+    };
+
+})(jQuery);
+
+</script>
