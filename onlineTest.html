@@ -795,16 +795,22 @@ function entrust_EA() {
     // }
 
     // //computer_coin_entrust.push(c_entrust);
-    var my_payoff = behavior[1];
-    console.log("my payoff is", my_payoff);
-    if (my_payoff > 0) {
-        c_entrust = Math.round(10+(my_payoff-10)/2)
+    if (iter == 0) {
+        c_entrust = 3;
     }
+
     else {
-        c_entrust = 10+my_payoff;
-    }
-    if (computer_moves[computer_moves.length-1] == 'D') {
-        c_entrust = 1;
+        var my_payoff = behavior[1];
+        console.log("my payoff is", my_payoff);
+        if (my_payoff > 0) {
+            c_entrust = Math.ceil(10+(my_payoff-10)/1.5)
+        }
+        else {
+            c_entrust = 10+my_payoff;
+        }
+        if (human_moves[human_moves.length-1] == 'D' || computer_moves[computer_moves.length-1] == 'D') {
+            c_entrust = 1;
+        }
     }
 
     if (c_entrust > 10) {
@@ -827,6 +833,18 @@ function tit4tat() {
         //console.log(human_moves);
         return human_moves[human_moves.length - 1];
     }
+}
+
+function TFTT() {
+    var prev = human_moves[human_moves.length-1];
+    var prevprev = human_moves[human_moves.length-2];
+    if (prev == 'D' && prevprev == 'D') {
+        computer_move = 'D';
+    }
+    else {
+        computer_move = 'C';
+    }
+    return computer_move;
 }
 
 var human_defect = "false";
@@ -946,7 +964,7 @@ function onClickWarPeace() {
     document.getElementById("Peace").disabled = false;
     document.getElementById("Peace").innerHTML = "Return opponent's coins";
     if (iter < n) {
-        comp = adaptive_tit4tat();
+        comp = TFTT();
         var selection = document.getElementById("entrust");
         hum_entrust = parseInt(selection.options[selection.selectedIndex].value);
         human_moves.push(hum);

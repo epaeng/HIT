@@ -79,7 +79,7 @@ input[type="radio"] {
 <div class="panel-body">
 <p>Hello!</p>
 
-This is a short experiment that explores how people interact in decisions that require trust. <p></p>
+This is a short experiment that explores how people make choices in decisions that require trust. <p></p>
     You will playing against a <b>robot</b>, and given 10 coins to start each round. In each round, you must: <p></p>
     <OL>   
     <LI> Entrust a number of coins to your opponent.
@@ -779,17 +779,22 @@ function entrust_EA() {
 
     // var most_frequent = entrustments.indexOf(Math.max.apply(Math, entrustments));
     // var c_entrust = Math.round(world * (most_frequent+1));
+    if (iter == 0) {
+        c_entrust = 3;
+    }
 
-    var my_payoff = behavior[1];
-    console.log("my payoff is", my_payoff);
-    if (my_payoff > 0) {
-        c_entrust = Math.round(10+(my_payoff-10)/2)
-    }
     else {
-        c_entrust = 10+my_payoff;
-    }
-    if (computer_moves[computer_moves.length-1] == 'D') {
-        c_entrust = 1;
+        var my_payoff = behavior[1];
+        console.log("my payoff is", my_payoff);
+        if (my_payoff > 0) {
+            c_entrust = Math.ceil(10+(my_payoff-10)/1.5)
+        }
+        else {
+            c_entrust = 10+my_payoff;
+        }
+        if (human_moves[human_moves.length-1] == 'D' || computer_moves[computer_moves.length-1] == 'D') {
+            c_entrust = 1;
+        }
     }
 
     if (c_entrust > 10) {
@@ -815,6 +820,19 @@ function tit4tat() {
         //console.log(human_moves);
         return human_moves[human_moves.length - 1];
     }
+}
+
+function TFTT() {
+    var prev = human_moves[human_moves.length-1];
+    var prevprev = human_moves[human_moves.length-2];
+    console.log(prev, prevprev);
+    if (prev == 'D' && prevprev == 'D') {
+        computer_move = 'D';
+    }
+    else {
+        computer_move = 'C';
+    }
+    return computer_move;
 }
 
 var human_defect = "false";
@@ -897,7 +915,7 @@ function onClickMatcher() {
 }
 
 function opponentJoined() {
-    //alert("Your opponent is ready!");
+    alert("The game has begun! Make your first choice below.");
     document.getElementById("Matcher").innerHTML="Game has begun";
     document.getElementById("War").style.display = 'inline';
     document.getElementById("Peace").style.display = 'inline';
@@ -935,14 +953,14 @@ function onClickWarPeace() {
     document.getElementById("Peace").disabled = false;
     document.getElementById("Peace").innerHTML = "Return opponent's coins";
     if (iter < n) {
-        comp = adaptive_tit4tat();
+        comp = TFTT();
         var selection = document.getElementById("entrust");
         hum_entrust = parseInt(selection.options[selection.selectedIndex].value);
         human_moves.push(hum);
         human_coin_entrust.push(hum_entrust);
         computer_moves.push(comp);
         computer_coin_entrust.push(comp_entrust);
-        var pay = calculate_score();
+        var pay = calculate_score(hum, comp, hum_entrust, comp_entrust);
         human_points = human_init + pay[0];
         human_running_total = human_running_total + human_points;
         computer_points = computer_init + pay[1];
@@ -1058,7 +1076,7 @@ function play_move_computer() {
     return comp;
 }
 
-function calculate_score() {    // net gain
+function calculate_score(hum, comp, hum_entrust, comp_entrust) {    // net gain
     if (hum == 'C' && comp == 'C') {
         behavior = [hum_entrust, comp_entrust];
         //console.log("in here");
