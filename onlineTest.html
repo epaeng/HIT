@@ -25,6 +25,10 @@ input[type="radio"] {
     border:2px solid red;
 }
 
+.border2 {
+    border:3px solid #E6E6E6;
+}
+
 .borderRed {
     border:3px solid #898989;
 }
@@ -752,66 +756,48 @@ function entrust_EA() {
         var computer_entrust = 3;
         return computer_entrust;
     }
-    else if (iter === 1) {
-        return human_coin_entrust[human_coin_entrust.length-1];
-    }
-    else {
-        if (human_moves[human_moves.length-1] == 'D') {
-            return 1;
-        }
-        else if (computer_moves[computer_moves.length-1] == 'D') {
-            return 1;
-        }
-        else if (human_moves[human_moves.length-1] == 'C' && computer_coin_entrust[computer_coin_entrust.length-1] > 8) {
-            return 10;          
+    var moves = [1, 1]; //[C,D]
+    var entrustments = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+    for (i=0; i<human_moves.length; i++) {
+        if (human_moves[i] == 'C') {
+            moves[0] = moves[0] + 1+i*2;
         }
         else {
-            var human_entrust_sum = 0;
-            var computer_entrust_sum = 0;
-            var lastmoveH = human_coin_entrust[human_coin_entrust.length-1];
-            var lastmoveC = computer_coin_entrust[computer_coin_entrust.length-1];
-            for (var i=0; i<human_coin_entrust.length-1; i++) {
-                human_entrust_sum = human_entrust_sum + human_coin_entrust[i];
-                computer_entrust_sum = computer_entrust_sum + computer_coin_entrust[i];
-            }
-            var human_entrust_average = human_entrust_sum/(human_coin_entrust.length);
-            var computer_entrust_average = computer_entrust_sum/(computer_coin_entrust.length);
-            human_entrust_expo = Math.round((human_entrust_average*0.5+lastmoveH*1.5)/2);    // exponential average
-            computer_entrust_expo = Math.round((computer_entrust_average*0.5+lastmoveC*1.5)/2);
-
-            console.log("exponential average is", human_entrust_expo, "computer expo", computer_entrust_expo);
-            var list = [];
-            var upper = 0;
-            var lower = 0;
-            if (lastmoveH - human_coin_entrust[human_coin_entrust.length-2] > 1 || lastmoveH > human_entrust_expo) {
-                upper = 3;
-                lower = 0;
-            }
-            else {
-                upper = 1;
-                lower = 0;
-            }
-            var list = [lastmoveH + upper, lastmoveH - lower, computer_entrust_expo+upper];
-            computer_entrust = list[Math.floor(Math.random()*list.length)];
-            if (lastmoveH - lastmoveC > 2) {
-                computer_entrust = lastmoveH + 3;   // if the difference is greater than 2
-            }
-            else if (lastmoveH == human_coin_entrust[human_coin_entrust.length-2]) {
-                computer_entrust = lastmoveH + 2;
-            }
-            if (computer_entrust > 10) {
-                computer_entrust = 10;
-            }
-            else if (computer_entrust < 1) {
-                computer_entrust = 1;
-            }
-            else if (lastmoveH == 1 && human_coin_entrust[human_coin_entrust.length-2] == 1) {
-                var list = [2, 3];
-                computer_entrust = list[Math.floor(Math.random()*list.length)];   // break a line of zeros
-            }
-            return computer_entrust;
+            moves[1] = moves[1] + 1+i*2;
         }
     }
+
+    for (x=0; x<human_moves.length; x++) {
+        var y = human_coin_entrust[x];
+        var e = parseInt(y);
+        entrustments[e-1] = entrustments[e-1] + 1+x*2;
+    }
+
+    // var most_recent_coin_entrustment = human_coin_entrust[human_coin_entrust.length-1];
+    // entrustments[most_recent_coin_entrustment-1] = entrustments[most_recent_coin_entrustment-1] + 2 // add "exponential average" factor
+
+    var CD_ratio = moves[0]/moves[1]-iter/5;
+    if (human_moves[human_moves.length-1] == 'D' || computer_moves[computer_moves.length-1] == 'D') {
+        CD_ratio = CD_ratio - 1;
+    }
+    
+    var most_frequent = entrustments.indexOf(Math.max.apply(Math, entrustments));
+    var c_entrust = Math.round(CD_ratio * (most_frequent+1));
+
+    console.log("cd radio", CD_ratio, "most freq", most_frequent+1, "c_entrust", c_entrust, "entrustments", entrustments, "moves", moves);
+
+    if (c_entrust > 10) {
+        c_entrust = 10;
+    }
+    else if (c_entrust < 1) {
+        c_entrust = 1;
+    }
+
+    computer_coin_entrust.push(c_entrust);
+
+    return c_entrust;
+
 }
 
 
@@ -824,15 +810,15 @@ function tit4tat() {
     }
 }
 
-function adaptive_tit4tat() {
-    var human_defect = "false";
-    if (iter !== 8) {
+var human_defect = "false";
+function adaptive_tit4tat() {    
+    if (iter !== 7) {
         computer_move = 'C';
-        if (iter < 8 && human_moves[human_moves.length-1] == 'D') {
+        if (iter < 7 && human_moves[human_moves.length-1] == 'D') {
             human_defect = "true";
         }
     }
-    else if (iter === 8) {
+    else if (iter === 7) {
         if (human_defect == "true") {
             computer_move = 'C';
         }
@@ -986,7 +972,7 @@ function delayEntrustment() {
     if (iter !== 0) {
         document.getElementById("resultIdentification").innerHTML = "";
         //document.getElementById("resultIdentification").style.backgroundColor = "#FF5C33";
-        changeObjectBorder("previousRoundResults", "");
+        changeObjectBorder("previousRoundResults", "border2");
     }
 
     iterE = iter*2;
