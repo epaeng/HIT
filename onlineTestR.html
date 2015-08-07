@@ -80,7 +80,7 @@ input[type="radio"] {
 <p>Hello!</p>
 
 This is a short experiment that explores how people interact in decisions that require trust. <p></p>
-    You will be matched with another Turker, and given 10 coins to start each round. In each round, you must: <p></p>
+    You will playing against a <b>robot</b>, and given 10 coins to start each round. In each round, you must: <p></p>
     <OL>   
     <LI> Entrust a number of coins to your opponent.
     <LI> Decide whether to keep or return <i>all</i> the coins that your opponent entrusted to you. 
@@ -107,7 +107,7 @@ There will be multiple rounds, but neither of you know the total number of round
 <p></p>
 
 <!-- MODAL- add javascript -->
-    <button type="button" class="btn btn-primary" id="Matcher" title = "Click to match" value="Click to match with an opponent" onclick="onClickMatcher()">Click to match with an opponent</button>
+    <button type="button" class="btn btn-primary" id="Matcher" title = "Click to match" value="Click to begin game" onclick="onClickMatcher()">Click to begin game</button>
 
 </div>
 </div>
@@ -152,115 +152,6 @@ There will be multiple rounds, but neither of you know the total number of round
 <div class="page" id="page3">
 
 <p><b> We are now going to ask you some questions about your decision making process and how it was influenced by your interactions with the other player. </b></p><p></p>
-
-<form name="human" method="post">
-
-    <fieldset id="motivation"><label>1. What motivated you in this game?</label> <p></p>
-        <input type="radio" name="motivation" value="mot1" id="mot1" required/> Beating the other player. <p></p>
-        <input type="radio" name="motivation" value="mot2" id="mot2"/> Maximizing my earnings. <p></p>
-        <input type="radio" name="motivation" value="mot3" id="mot3"/> Helping the other player. <p></p>
-        <input type="radio" name="motivation" value="mot4" id="mot4"/> Finishing as quickly as possible. <p></p>
-        <input type="radio" name="motivation" value="mot5" id="mot5"/> Other (please write in textbox) <p></p>
-    <textarea class="form-control" cols="120" name="Q6MultiLineTextInput" placeholder = "Write here..." rows="2" id="mot6H"></textarea></fieldset>
-
-    <fieldset id="qualities">
-    <label>2. When you think about human beings, which of these qualities come to mind?</label> <p></p>
-        <input type="checkbox" name="qualitiesH" value="qualities1" id="qualities1"/> Intelligence <p></p>
-        <input type="checkbox" name="qualitiesH" value="qualities2" id="qualities2"/> Faculty for sensations <p></p>
-        <input type="checkbox" name="qualitiesH" value="qualities3" id="qualities3"/> Rationality <p></p>
-        <input type="checkbox" name="qualitiesH" value="qualities4" id="qualities4"/> Sympathy <p></p>
-        <input type="checkbox" name="qualitiesH" value="qualities5" id="qualities5"/> Perfection <p></p>
-        <input type="checkbox" name="qualitiesH" value="qualities6" id="qualities6"/> Humanity <p></p>
-        <input type="checkbox" name="qualitiesH" value="qualities7" id="qualities7"/> Faculty for feelings <p></p>
-        <input type="checkbox" name="qualitiesH" value="qualities8" id="qualities8"/> Precision <p></p>
-        <input type="checkbox" name="qualitiesH" value="qualities9" id="qualities9"/> Life <p></p>
-        <input type="checkbox" name="qualitiesH" value="qualities10" id="qualities10"/> Reliability </fieldset>
-
-<p></p>
-
-<p><b> The following are asked on a Likert scale from 1 to 7 (1 = not at all, 7 = extremely). Please indicate how you feel about these phrases as pertinent to your human opponent in the game: </b></p><p></p>
-
-    <fieldset id="deceptive"><label>3. Humans are deceptive. </label>
-        <input type="radio" name="deceptive" value="deceptive1" id="deceptive1"/> 1
-        <input type="radio" name="deceptive" value="deceptive2" id="deceptive2"/> 2
-        <input type="radio" name="deceptive" value="deceptive3" id="deceptive3"/> 3
-        <input type="radio" name="deceptive" value="deceptive4" id="deceptive4"/> 4
-        <input type="radio" name="deceptive" value="deceptive5" id="deceptive5"/> 5
-        <input type="radio" name="deceptive" value="deceptive6" id="deceptive6"/> 6
-        <input type="radio" name="deceptive" value="deceptive7" id="deceptive7"/> 7</fieldset>
-
-    <fieldset id="underhanded"><label>4. Humans behave in an underhanded manner. </label>
-        <input type="radio" name="underhanded" value="underhanded1" id="underhanded1"/> 1 
-        <input type="radio" name="underhanded" value="underhanded2" id="underhanded2"/> 2
-        <input type="radio" name="underhanded" value="underhanded3" id="underhanded3"/> 3
-        <input type="radio" name="underhanded" value="underhanded4" id="underhanded4"/> 4
-        <input type="radio" name="underhanded" value="underhanded5" id="underhanded5"/> 5
-        <input type="radio" name="underhanded" value="underhanded6" id="underhanded6"/> 6
-        <input type="radio" name="underhanded" value="underhanded7" id="underhanded7"/> 7</fieldset>
-
-    <fieldset id="confident"><label>5. I am confident in humans. </label>
-        <input type="radio" name="confident" value="confident1" id="confident1"/> 1 
-        <input type="radio" name="confident" value="confident2" id="confident2"/> 2
-        <input type="radio" name="confident" value="confident3" id="confident3"/> 3
-        <input type="radio" name="confident" value="confident4" id="confident4"/> 4
-        <input type="radio" name="confident" value="confident5" id="confident5"/> 5
-        <input type="radio" name="confident" value="confident6" id="confident6"/> 6
-        <input type="radio" name="confident" value="confident7" id="confident7"/> 7</fieldset>
-
-    <fieldset id="integrity"><label>6. Humans have integrity. </label>
-        <input type="radio" name="integrity" value="integrity1" id="integrity1"/> 1 
-        <input type="radio" name="integrity" value="integrity2" id="integrity2"/> 2
-        <input type="radio" name="integrity" value="integrity3" id="integrity3"/> 3
-        <input type="radio" name="integrity" value="integrity4" id="integrity4"/> 4
-        <input type="radio" name="integrity" value="integrity5" id="integrity5"/> 5
-        <input type="radio" name="integrity" value="integrity6" id="integrity6"/> 6
-        <input type="radio" name="integrity" value="integrity7" id="integrity7"/> 7</fieldset>
-
-    <fieldset id="dependable"><label>7. Humans are dependable (dependable in that they can be trusted in any situation)<a href="#" data-toggle="popover" rel="popover" data-trigger="hover" title="Definition of dependable" data-content="Dependable in this context means that a person can be trusted to provide support or assistance in times of need. This is different from reliable in that it is not task-specific or situation-specific. For example, 'I can depend on him for anything'."><sup>*</sup></a>. </label>
-        </a>
-        <input type="radio" name="dependable" value="dependable1" id="dependable1"/> 1 
-        <input type="radio" name="dependable" value="dependable2" id="dependable2"/> 2
-        <input type="radio" name="dependable" value="dependable3" id="dependable3"/> 3
-        <input type="radio" name="dependable" value="dependable4" id="dependable4"/> 4
-        <input type="radio" name="dependable" value="dependable5" id="dependable5"/> 5
-        <input type="radio" name="dependable" value="dependable6" id="dependable6"/> 6
-        <input type="radio" name="dependable" value="dependable7" id="dependable7"/> 7</fieldset>
-
-    <fieldset id="reliable"><label>8. Humans are reliable (reliable in that they can be trusted to do something satisfactorily)<a href="#" data-toggle="popover" rel="popover" data-trigger="hover" title="Definition of reliable" data-content="Reliable in this context means that a person can be trusted to do something competently and satisfactorily. This is different from dependable in that it is situation-specific. For example, 'She can give a reliable testimony'."><sup>*</sup></a>. </label>
-        <input type="radio" name="reliable" value="reliable1" id="reliable1"/> 1 
-        <input type="radio" name="reliable" value="reliable2" id="reliable2"/> 2
-        <input type="radio" name="reliable" value="reliable3" id="reliable3"/> 3
-        <input type="radio" name="reliable" value="reliable4" id="reliable4"/> 4
-        <input type="radio" name="reliable" value="reliable5" id="reliable5"/> 5
-        <input type="radio" name="reliable" value="reliable6" id="reliable6"/> 6
-        <input type="radio" name="reliable" value="reliable7" id="reliable7"/> 7</fieldset>   
-
-    <fieldset id="trust"><label>9. I can trust humans. </label>
-        <input type="radio" name="trust" value="trust1" id="trust1"/> 1 
-        <input type="radio" name="trust" value="trust2" id="trust2"/> 2
-        <input type="radio" name="trust" value="trust3" id="trust3"/> 3
-        <input type="radio" name="trust" value="trust4" id="trust4"/> 4
-        <input type="radio" name="trust" value="trust5" id="trust5"/> 5
-        <input type="radio" name="trust" value="trust6" id="trust6"/> 6
-        <input type="radio" name="trust" value="trust7" id="trust7"/> 7</fieldset>   
-
-    <fieldset id="familiar"><label>10. I am familiar with humans. </label>
-        <input type="radio" name="familiar" value="familiar1" id="familiar1"/> 1 
-        <input type="radio" name="familiar" value="familiar2" id="familiar2"/> 2
-        <input type="radio" name="familiar" value="familiar3" id="familiar3"/> 3
-        <input type="radio" name="familiar" value="familiar4" id="familiar4"/> 4
-        <input type="radio" name="familiar" value="familiar5" id="familiar5"/> 5
-        <input type="radio" name="familiar" value="familiar6" id="familiar6"/> 6
-        <input type="radio" name="familiar" value="familiar7" id="familiar7"/> 7</fieldset></form>  
-
-<input type="button" class="btn btn-info" onclick="validateForm('human', 'qualitiesH')" value="Submit first survey">
-<!--<a class="nextLink" href="javascript:validateForm()">Click here for next page</a>
-pass page navigation function from form validation function--> 
-</div>
-
-<div class="page" id="page4">
-
-<p><b> Imagine you had instead played this game against a <font color="red">robot</font> opponent. The following questions regard how you would make decisions in this game, and how they would be influenced by your opponent.</b></p><p></p>
 
 <form name="robot" method="post">
 
@@ -366,7 +257,117 @@ pass page navigation function from form validation function-->
         <input type="radio" name="familiar" value="familiar6" id="familiar6"/> 6
         <input type="radio" name="familiar" value="familiar7" id="familiar7"/> 7</fieldset></form>
 
-    <input type="button" class="btn btn-info" onclick="validateForm('robot', 'qualitiesR')" value="Submit second survey"> </div>
+
+<input type="button" class="btn btn-info" onclick="validateForm('robot', 'qualitiesR')" value="Submit first survey">
+<!--<a class="nextLink" href="javascript:validateForm()">Click here for next page</a>
+pass page navigation function from form validation function--> 
+</div>
+
+<div class="page" id="page4">
+
+<p><b> Imagine you had instead played this game against a <font color="red">human</font> opponent. The following questions regard how you would make decisions in this game, and how they would be influenced by your opponent.</b></p><p></p>
+
+<form name="human" method="post">
+
+    <fieldset id="motivation"><label>1. What motivated you in this game?</label> <p></p>
+        <input type="radio" name="motivation" value="mot1" id="mot1" required/> Beating the other player. <p></p>
+        <input type="radio" name="motivation" value="mot2" id="mot2"/> Maximizing my earnings. <p></p>
+        <input type="radio" name="motivation" value="mot3" id="mot3"/> Helping the other player. <p></p>
+        <input type="radio" name="motivation" value="mot4" id="mot4"/> Finishing as quickly as possible. <p></p>
+        <input type="radio" name="motivation" value="mot5" id="mot5"/> Other (please write in textbox) <p></p>
+    <textarea class="form-control" cols="120" name="Q6MultiLineTextInput" placeholder = "Write here..." rows="2" id="mot6H"></textarea></fieldset>
+
+    <fieldset id="qualities">
+    <label>2. When you think about human beings, which of these qualities come to mind?</label> <p></p>
+        <input type="checkbox" name="qualitiesH" value="qualities1" id="qualities1"/> Intelligence <p></p>
+        <input type="checkbox" name="qualitiesH" value="qualities2" id="qualities2"/> Faculty for sensations <p></p>
+        <input type="checkbox" name="qualitiesH" value="qualities3" id="qualities3"/> Rationality <p></p>
+        <input type="checkbox" name="qualitiesH" value="qualities4" id="qualities4"/> Sympathy <p></p>
+        <input type="checkbox" name="qualitiesH" value="qualities5" id="qualities5"/> Perfection <p></p>
+        <input type="checkbox" name="qualitiesH" value="qualities6" id="qualities6"/> Humanity <p></p>
+        <input type="checkbox" name="qualitiesH" value="qualities7" id="qualities7"/> Faculty for feelings <p></p>
+        <input type="checkbox" name="qualitiesH" value="qualities8" id="qualities8"/> Precision <p></p>
+        <input type="checkbox" name="qualitiesH" value="qualities9" id="qualities9"/> Life <p></p>
+        <input type="checkbox" name="qualitiesH" value="qualities10" id="qualities10"/> Reliability </fieldset>
+
+<p></p>
+
+<p><b> The following are asked on a Likert scale from 1 to 7 (1 = not at all, 7 = extremely). Please indicate how you feel about these phrases as pertinent to your human opponent in the game: </b></p><p></p>
+
+    <fieldset id="deceptive"><label>3. Humans are deceptive. </label>
+        <input type="radio" name="deceptive" value="deceptive1" id="deceptive1"/> 1
+        <input type="radio" name="deceptive" value="deceptive2" id="deceptive2"/> 2
+        <input type="radio" name="deceptive" value="deceptive3" id="deceptive3"/> 3
+        <input type="radio" name="deceptive" value="deceptive4" id="deceptive4"/> 4
+        <input type="radio" name="deceptive" value="deceptive5" id="deceptive5"/> 5
+        <input type="radio" name="deceptive" value="deceptive6" id="deceptive6"/> 6
+        <input type="radio" name="deceptive" value="deceptive7" id="deceptive7"/> 7</fieldset>
+
+    <fieldset id="underhanded"><label>4. Humans behave in an underhanded manner. </label>
+        <input type="radio" name="underhanded" value="underhanded1" id="underhanded1"/> 1 
+        <input type="radio" name="underhanded" value="underhanded2" id="underhanded2"/> 2
+        <input type="radio" name="underhanded" value="underhanded3" id="underhanded3"/> 3
+        <input type="radio" name="underhanded" value="underhanded4" id="underhanded4"/> 4
+        <input type="radio" name="underhanded" value="underhanded5" id="underhanded5"/> 5
+        <input type="radio" name="underhanded" value="underhanded6" id="underhanded6"/> 6
+        <input type="radio" name="underhanded" value="underhanded7" id="underhanded7"/> 7</fieldset>
+
+    <fieldset id="confident"><label>5. I am confident in humans. </label>
+        <input type="radio" name="confident" value="confident1" id="confident1"/> 1 
+        <input type="radio" name="confident" value="confident2" id="confident2"/> 2
+        <input type="radio" name="confident" value="confident3" id="confident3"/> 3
+        <input type="radio" name="confident" value="confident4" id="confident4"/> 4
+        <input type="radio" name="confident" value="confident5" id="confident5"/> 5
+        <input type="radio" name="confident" value="confident6" id="confident6"/> 6
+        <input type="radio" name="confident" value="confident7" id="confident7"/> 7</fieldset>
+
+    <fieldset id="integrity"><label>6. Humans have integrity. </label>
+        <input type="radio" name="integrity" value="integrity1" id="integrity1"/> 1 
+        <input type="radio" name="integrity" value="integrity2" id="integrity2"/> 2
+        <input type="radio" name="integrity" value="integrity3" id="integrity3"/> 3
+        <input type="radio" name="integrity" value="integrity4" id="integrity4"/> 4
+        <input type="radio" name="integrity" value="integrity5" id="integrity5"/> 5
+        <input type="radio" name="integrity" value="integrity6" id="integrity6"/> 6
+        <input type="radio" name="integrity" value="integrity7" id="integrity7"/> 7</fieldset>
+
+    <fieldset id="dependable"><label>7. Humans are dependable (dependable in that they can be trusted in any situation)<a href="#" data-toggle="popover" rel="popover" data-trigger="hover" title="Definition of dependable" data-content="Dependable in this context means that a person can be trusted to provide support or assistance in times of need. This is different from reliable in that it is not task-specific or situation-specific. For example, 'I can depend on him for anything'."><sup>*</sup></a>. </label>
+        </a>
+        <input type="radio" name="dependable" value="dependable1" id="dependable1"/> 1 
+        <input type="radio" name="dependable" value="dependable2" id="dependable2"/> 2
+        <input type="radio" name="dependable" value="dependable3" id="dependable3"/> 3
+        <input type="radio" name="dependable" value="dependable4" id="dependable4"/> 4
+        <input type="radio" name="dependable" value="dependable5" id="dependable5"/> 5
+        <input type="radio" name="dependable" value="dependable6" id="dependable6"/> 6
+        <input type="radio" name="dependable" value="dependable7" id="dependable7"/> 7</fieldset>
+
+    <fieldset id="reliable"><label>8. Humans are reliable (reliable in that they can be trusted to do something satisfactorily)<a href="#" data-toggle="popover" rel="popover" data-trigger="hover" title="Definition of reliable" data-content="Reliable in this context means that a person can be trusted to do something competently and satisfactorily. This is different from dependable in that it is situation-specific. For example, 'She can give a reliable testimony'."><sup>*</sup></a>. </label>
+        <input type="radio" name="reliable" value="reliable1" id="reliable1"/> 1 
+        <input type="radio" name="reliable" value="reliable2" id="reliable2"/> 2
+        <input type="radio" name="reliable" value="reliable3" id="reliable3"/> 3
+        <input type="radio" name="reliable" value="reliable4" id="reliable4"/> 4
+        <input type="radio" name="reliable" value="reliable5" id="reliable5"/> 5
+        <input type="radio" name="reliable" value="reliable6" id="reliable6"/> 6
+        <input type="radio" name="reliable" value="reliable7" id="reliable7"/> 7</fieldset>   
+
+    <fieldset id="trust"><label>9. I can trust humans. </label>
+        <input type="radio" name="trust" value="trust1" id="trust1"/> 1 
+        <input type="radio" name="trust" value="trust2" id="trust2"/> 2
+        <input type="radio" name="trust" value="trust3" id="trust3"/> 3
+        <input type="radio" name="trust" value="trust4" id="trust4"/> 4
+        <input type="radio" name="trust" value="trust5" id="trust5"/> 5
+        <input type="radio" name="trust" value="trust6" id="trust6"/> 6
+        <input type="radio" name="trust" value="trust7" id="trust7"/> 7</fieldset>   
+
+    <fieldset id="familiar"><label>10. I am familiar with humans. </label>
+        <input type="radio" name="familiar" value="familiar1" id="familiar1"/> 1 
+        <input type="radio" name="familiar" value="familiar2" id="familiar2"/> 2
+        <input type="radio" name="familiar" value="familiar3" id="familiar3"/> 3
+        <input type="radio" name="familiar" value="familiar4" id="familiar4"/> 4
+        <input type="radio" name="familiar" value="familiar5" id="familiar5"/> 5
+        <input type="radio" name="familiar" value="familiar6" id="familiar6"/> 6
+        <input type="radio" name="familiar" value="familiar7" id="familiar7"/> 7</fieldset></form>  
+
+    <input type="button" class="btn btn-info" onclick="validateForm('human', 'qualitiesH')" value="Submit second survey"> </div>
     <!--<a class="nextLink" href="javascript:Debrief()">Click here for next page</a></div>-->
 
 <div class="page" id="page5">
@@ -454,8 +455,8 @@ function NextTrial() {
         var checkedValue = $("input[type=radio]:checked", "#page" + currentTrial).val();
         if (checkedValue) {
             // shows modal for 5 seconds, increase this time
-            waitingDialog.show("Waiting for more players to join the queue...");
-            setTimeout(function() {waitingDialog.hide();}, 5000);
+            //waitingDialog.show("Waiting for more players to join the queue...");
+            //setTimeout(function() {waitingDialog.hide();}, 5000);
 
             document.getElementById("War").style.display = 'none';
             document.getElementById("Peace").style.display = 'none';
@@ -528,8 +529,8 @@ function validateForm(formName, qualitiesName) {
             alert('Please answer all the questions!');
         }
 
-        else {
-            alert("One more survey left!"); // change this line if other survey
+        else {            
+            alert("Thank you! You are being directed to the debriefing page");
             Debrief();
         }
     }
@@ -543,7 +544,7 @@ function validateForm(formName, qualitiesName) {
         }
 
         else {
-            alert("Thank you! You are being directed to the debriefing page");
+            alert("One more survey left!"); // change this line if other survey
             Debrief();
         }
     }
@@ -752,49 +753,33 @@ function lastMove(input_list) {
 //======================================== STRATEGIES ================================================
 function entrust_EA() {
     // console.log("iter is", iter);
+    // var world = 1;
+    // //var r = 0.2;
     // if (iter === 0) {
     //     var computer_entrust = 3;
     //     return computer_entrust;
     // }
-    // var moves = [1, 1]; //[C,D]
+    // var moves = [0, 0]; //[C,D]
     // var entrustments = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
     // for (i=0; i<human_moves.length; i++) {
     //     if (human_moves[i] == 'C') {
-    //         moves[0] = moves[0] + 1+i*2;
+    //         moves[0] = moves[0] + i;
     //     }
     //     else {
-    //         moves[1] = moves[1] + 1+i*2;
+    //         moves[1] = moves[1] + i;
     //     }
     // }
 
     // for (x=0; x<human_moves.length; x++) {
     //     var y = human_coin_entrust[x];
     //     var e = parseInt(y);
-    //     entrustments[e-1] = entrustments[e-1] + 1+x*2;
+    //     entrustments[e-1] = entrustments[e-1]+1;
     // }
 
-    // // var most_recent_coin_entrustment = human_coin_entrust[human_coin_entrust.length-1];
-    // // entrustments[most_recent_coin_entrustment-1] = entrustments[most_recent_coin_entrustment-1] + 2 // add "exponential average" factor
-
-    // var CD_ratio = moves[0]/moves[1]-iter/5;
-    // if (human_moves[human_moves.length-1] == 'D' || computer_moves[computer_moves.length-1] == 'D') {
-    //     CD_ratio = CD_ratio - 1;
-    // }
-    
     // var most_frequent = entrustments.indexOf(Math.max.apply(Math, entrustments));
-    // var c_entrust = Math.round(CD_ratio * (most_frequent+1));
+    // var c_entrust = Math.round(world * (most_frequent+1));
 
-    // console.log("cd radio", CD_ratio, "most freq", most_frequent+1, "c_entrust", c_entrust, "entrustments", entrustments, "moves", moves);
-
-    // if (c_entrust > 10) {
-    //     c_entrust = 10;
-    // }
-    // else if (c_entrust < 1) {
-    //     c_entrust = 1;
-    // }
-
-    // //computer_coin_entrust.push(c_entrust);
     var my_payoff = behavior[1];
     console.log("my payoff is", my_payoff);
     if (my_payoff > 0) {
@@ -814,6 +799,9 @@ function entrust_EA() {
         c_entrust = 1;
     }
 
+    //console.log("cd radio", CD_ratio, "most freq", most_frequent+1, "c_entrust", c_entrust, "entrustments", entrustments, "moves", moves);
+
+    //computer_coin_entrust.push(c_entrust);
 
     return c_entrust;
 
@@ -903,13 +891,14 @@ function adaptive_tit4tat() {
 
 function onClickMatcher() {
     document.getElementById("Matcher").disabled=true;
-    document.getElementById("Matcher").innerHTML="...Waiting for opponent to join...";
-    setTimeout("opponentJoined()", 3000);
+    //document.getElementById("Matcher").innerHTML="...Waiting for opponent to join...";
+    //setTimeout("opponentJoined()", 3000);
+    opponentJoined();
 }
 
 function opponentJoined() {
-    alert("Your opponent has joined the game!");
-    document.getElementById("Matcher").innerHTML="Opponent has joined";
+    //alert("Your opponent is ready!");
+    document.getElementById("Matcher").innerHTML="Game has begun";
     document.getElementById("War").style.display = 'inline';
     document.getElementById("Peace").style.display = 'inline';
     document.getElementById("sendEntrustment").style.display = 'block';
@@ -987,7 +976,7 @@ function onClickWarPeace() {
 
 function delayEntrustment() {
     document.getElementById("sendEntrustment").disabled = true;
-    document.getElementById("sendEntrustment").innerHTML ="...Waiting for opponent's move...";
+    //document.getElementById("sendEntrustment").innerHTML ="...Waiting for opponent's move...";
     if (iter !== 0) {
         document.getElementById("resultIdentification").innerHTML = "";
         //document.getElementById("resultIdentification").style.backgroundColor = "#FF5C33";
@@ -997,7 +986,8 @@ function delayEntrustment() {
     iterE = iter*2;
     iterL = iter*2+1;
     computer_wait = delay(iterE, iterL);
-    setTimeout("onClickSendEntrustment()", computer_wait);
+    onClickSendEntrustment();
+    //setTimeout("onClickSendEntrustment()", computer_wait);
 }
 
 function delayWar(button) {
@@ -1006,8 +996,8 @@ function delayWar(button) {
     iterE = iter*2+1;
     iterL = iter*2+2;
     computer_wait = delay(iterE, iterL);
-
-    setTimeout("onClickWar()", computer_wait);
+    onClickWar();
+    //setTimeout("onClickWar()", computer_wait);
 }
 
 function delayPeace(button) {
@@ -1016,8 +1006,8 @@ function delayPeace(button) {
     iterE = iter*2+1;
     iterL = iter*2+2;
     computer_wait = delay(iterE, iterL);
-
-    setTimeout("onClickPeace()", computer_wait);
+    onClickPeace();
+    //setTimeout("onClickPeace()", computer_wait);
 }
 
 function delay(iterE, iterL) {

@@ -178,7 +178,7 @@ There will be multiple rounds, but neither of you know the total number of round
 
 <p></p>
 
-<p><b> The following are asked on a Likert scale from 1 to 7 (1 = not at all, 7 = extremely). Please indicate how you feel about these phrases as pertinent to your human opponent in the game: </b></p><p></p>
+<p><b> The following are asked on a Likert scale from 1 to 7 (1 = not at all, 7 = extremely). Please indicate how you feel about these phrases: </b></p><p></p>
 
     <fieldset id="deceptive"><label>3. Humans are deceptive. </label>
         <input type="radio" name="deceptive" value="deceptive1" id="deceptive1"/> 1
@@ -381,15 +381,15 @@ pass page navigation function from form validation function-->
 <!--complete the debriefing page -->
 
 <fieldset><label> After reading the debriefing, would you like to participate or withdraw from the study? Remember to hit SUBMIT.</label>
-<form name="participation" method="POST" > <!-- action = "https://workersandbox.mturk.com/mturk/externalSubmit" -->
+<form name="participation" method="POST" action = "https://workersandbox.mturk.com/mturk/externalSubmit"> <!--  -->
     <input type="radio" name="participation" value="participate" id="participate"/> Participate <p></p>
     <input type="radio" name="participation" value="withdraw" id="withdraw"/> Withdraw <p></p>
 
     <input type="hidden" id="assignmentId" value="{{ assignment_id }}" name="assignmentId"/>
     <input type="hidden" id="workerId" value="{{ worker_id }}" name="workerId"/>
     <input type="hidden" id="hitId" value="{{ hit_id }}" name="hitId"/>
-<fieldset><label>Copy and Paste me into the Google Form after hitting submit!</label><textarea class="form-control" cols="5" name="Q6MultiLineTextInput" id="survey+answer"></textarea></fieldset>
-<input type="button" class="btn btn-info" onclick="sendResponse()" value="Submit"></fieldset> <!-- REMEMBER TO PUT THIS BACK IN!!!! TYPE=SUBMIT -->
+<fieldset hidden><label>Copy and Paste me into the Google Form after hitting submit!</label><textarea class="form-control" cols="5" name="Q6MultiLineTextInput" id="survey+answer"></textarea></fieldset>
+<input type="submit" onclick="sendResponse()" value="Submit"></fieldset> <!-- REMEMBER TO PUT THIS BACK IN!!!! TYPE=SUBMIT -->
     </form>
 </div>
 
@@ -444,13 +444,13 @@ function NextTrial() {
 
     var accepted = getUrlVars()['workerId'];
     console.log(accepted);
-    // if (accepted == null) {
-    //     alert("Please accept the HIT before moving on");
-    // }
+    if (accepted == null) {
+        alert("Please accept the HIT before moving on");
+    }
     //console.log("next page")
 
     // CHANGE THIS WHEN TURKING
-    if (accepted == null) {
+    else {
         var checkedValue = $("input[type=radio]:checked", "#page" + currentTrial).val();
         if (checkedValue) {
             // shows modal for 5 seconds, increase this time
@@ -751,61 +751,41 @@ function lastMove(input_list) {
 
 //======================================== STRATEGIES ================================================
 function entrust_EA() {
-    // console.log("iter is", iter);
-    // if (iter === 0) {
-    //     var computer_entrust = 3;
-    //     return computer_entrust;
-    // }
-    // var moves = [1, 1]; //[C,D]
-    // var entrustments = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    console.log("iter is", iter);
+    if (iter === 0) {
+        var computer_entrust = 3;
+        return computer_entrust;
+    }
+    var moves = [1, 1]; //[C,D]
+    var entrustments = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-    // for (i=0; i<human_moves.length; i++) {
-    //     if (human_moves[i] == 'C') {
-    //         moves[0] = moves[0] + 1+i*2;
-    //     }
-    //     else {
-    //         moves[1] = moves[1] + 1+i*2;
-    //     }
-    // }
+    for (i=0; i<human_moves.length; i++) {
+        if (human_moves[i] == 'C') {
+            moves[0] = moves[0] + 1+i*2;
+        }
+        else {
+            moves[1] = moves[1] + 1+i*2;
+        }
+    }
 
-    // for (x=0; x<human_moves.length; x++) {
-    //     var y = human_coin_entrust[x];
-    //     var e = parseInt(y);
-    //     entrustments[e-1] = entrustments[e-1] + 1+x*2;
-    // }
+    for (x=0; x<human_moves.length; x++) {
+        var y = human_coin_entrust[x];
+        var e = parseInt(y);
+        entrustments[e-1] = entrustments[e-1] + 1+x*2;
+    }
 
-    // // var most_recent_coin_entrustment = human_coin_entrust[human_coin_entrust.length-1];
-    // // entrustments[most_recent_coin_entrustment-1] = entrustments[most_recent_coin_entrustment-1] + 2 // add "exponential average" factor
+    // var most_recent_coin_entrustment = human_coin_entrust[human_coin_entrust.length-1];
+    // entrustments[most_recent_coin_entrustment-1] = entrustments[most_recent_coin_entrustment-1] + 2 // add "exponential average" factor
 
-    // var CD_ratio = moves[0]/moves[1]-iter/5;
-    // if (human_moves[human_moves.length-1] == 'D' || computer_moves[computer_moves.length-1] == 'D') {
-    //     CD_ratio = CD_ratio - 1;
-    // }
+    var CD_ratio = moves[0]/moves[1]-iter/5;
+    if (human_moves[human_moves.length-1] == 'D' || computer_moves[computer_moves.length-1] == 'D') {
+        CD_ratio = CD_ratio - 1;
+    }
     
-    // var most_frequent = entrustments.indexOf(Math.max.apply(Math, entrustments));
-    // var c_entrust = Math.round(CD_ratio * (most_frequent+1));
+    var most_frequent = entrustments.indexOf(Math.max.apply(Math, entrustments));
+    var c_entrust = Math.round(CD_ratio * (most_frequent+1));
 
-    // console.log("cd radio", CD_ratio, "most freq", most_frequent+1, "c_entrust", c_entrust, "entrustments", entrustments, "moves", moves);
-
-    // if (c_entrust > 10) {
-    //     c_entrust = 10;
-    // }
-    // else if (c_entrust < 1) {
-    //     c_entrust = 1;
-    // }
-
-    // //computer_coin_entrust.push(c_entrust);
-    var my_payoff = behavior[1];
-    console.log("my payoff is", my_payoff);
-    if (my_payoff > 0) {
-        c_entrust = Math.round(10+(my_payoff-10)/2)
-    }
-    else {
-        c_entrust = 10+my_payoff;
-    }
-    if (computer_moves[computer_moves.length-1] == 'D') {
-        c_entrust = 1;
-    }
+    console.log("cd radio", CD_ratio, "most freq", most_frequent+1, "c_entrust", c_entrust, "entrustments", entrustments, "moves", moves);
 
     if (c_entrust > 10) {
         c_entrust = 10;
@@ -814,6 +794,7 @@ function entrust_EA() {
         c_entrust = 1;
     }
 
+    //computer_coin_entrust.push(c_entrust);
 
     return c_entrust;
 
